@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ea.service.res.db.mapper.GetDataMapper">
+       
+    <select id="exeSqlToMap" parameterType="String" resultType="map">
+        <![CDATA[${sql};]]>
+    </select>
+    
+	<select id="getCandlesBySql" parameterType="String" resultType="ea.service.res.dto.CandlesDto">
+        <![CDATA[${sql};]]>
+    </select>
+    
+    <!-- 001 得到行数 -->
+    <select id="getCount" parameterType="String" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_getCount('${table}');]]>
+    </select>
+    
+	<!-- 002 得到最大id值 -->
+    <select id="getMaxId" parameterType="String" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_getMaxId('${table}');]]>
+    </select>
+    
+    <select id="getMaxCno" parameterType="String" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_getMaxCno('${table}');]]>
+    </select>
+    
+    <!-- 003 得到时间最大值 -->
+    <select id="getMaxMinTime" parameterType="String" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_getMaxMinTime('${table}');]]>
+    </select>
+    
+	<!-- 004 判断时间是否存在 -->
+    <select id="isUniqueTime" parameterType="String" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_isUniqueTime('${table}','${time}');]]>
+    </select>
+
+	<!-- 005 得到t_clear表已经刷新的数据量  -->
+    <select id="getClearNumByPeriod" parameterType="int" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_getClearNumByPeriod(${period});]]>
+    </select>
+    
+    <!-- 006 根据周期和时间得到对应的CNO  -->
+    <select id="getCnoByTime" parameterType="String" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_getCnoByTime('${table}','${time}');]]>
+    </select >
+    
+    <!-- 007 得到特征序列高低点 -->
+    <select id="getSection" parameterType="map" resultType="ea.service.res.dto.SectionDto">
+        <![CDATA[call zsy_getSection('${period}','${time}');]]>
+    </select >
+    
+	<!-- 008 按条件检查remark表是否存在数据  0:无   1:有 -->
+    <select id="isExistRemark" parameterType="int" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_isExistRemark(${period}, ${cno}, ${type}, ${dir});]]>
+    </select >
+    
+    <!-- 011 根据cno或time得到k线数据 isTest:1 测试 0:运行 -->
+	<select id="getCandle" resultType="ea.service.res.dto.CandlesDto" parameterType="map">
+        <![CDATA[call zsy_getCandle('${table}', ${isTest}, ${period}, ${cno}, ${time});]]>
+    </select>
+    
+    <!-- 012 根据CNO或time,得到笔段信息 -->
+    <select id="getFenBiInfoByType" resultType="ea.service.res.dto.FxMod" parameterType="map">
+    	<![CDATA[call zsy_getFenBiInfoByType('${table}', ${period}, ${cno} ,${time});]]>
+    </select>
+    
+    <!-- 013 得到MACD区间最值 -->
+    <select id="getRangeMacdExt" resultType="ea.service.res.dto.macd.MacdMod" parameterType="map">
+    	<![CDATA[call zsy_getRangeMacdExt('${table}', ${period}, ${c1}, ${c2}, ${c3}, ${c4}, ${c5}, ${c6});]]>
+    </select>
+    
+    <!-- 014 得到区间价格最值 -->
+	<select id="getPriceDto" resultType="ea.service.res.dto.PriceDto" parameterType="map">
+    	<![CDATA[call zsy_getPriceDto(${start}, ${end});]]>
+    </select>
+    
+    <!-- 015 根据5分钟cno得到一分钟candle -->
+	<select id="getM1CandleByM5Cno" resultType="ea.service.res.dto.CandlesDto" parameterType="int">
+    	<![CDATA[call zsy_getM1CandleByM5Cno(${cno});]]>
+    </select>
+    
+	<!-- 017 根据对应周期返回清洗的结果集period和cno -->
+	<select id="getclearCnoPeriods" resultType="ea.service.res.dto.BaseDto" parameterType="map">
+    	<![CDATA[call zsy_getclearCnoPeriods(${p_dev},${p_brk});]]>
+    </select>
+    
+	<!-- 019 得到分页数据的开始和结束时间 -->
+	<select id="getPageTime" resultType="ea.service.res.dto.PageDto" parameterType="String">
+    	<![CDATA[call zsy_getPageTime('${table}',${start}, ${end});]]>
+    </select>
+    
+    <!-- 020 得到各周期对应的页信息 -->
+	<select id="getPageNum" resultType="ea.service.res.dto.BaseDto" parameterType="map">
+    	<![CDATA[call zsy_getPageNum('${table}',${page});]]>
+    </select>
+    
+    <!-- 021 按年份得到停盘时间的集合 -->
+	<select id="getStopTimeByYear" resultType="ea.service.res.dto.BaseDto" parameterType="int">
+    	<![CDATA[call zsy_getStopTimeByYear(${year});]]>
+    </select>
+    
+    <!-- 022 根据时间得到K线数据  -->
+    <select id="getKdataByCno" resultType="ea.service.res.dto.CandlesDto" parameterType="int">
+    	<![CDATA[call zsy_getKdataByCno(${period}, ${cno});]]>
+    </select>
+    
+    <!-- 024 得到每月营收 -->
+    <select id="showOrderMonth" resultType="ea.service.res.dto.BaseDto" parameterType="int">
+    	<![CDATA[call zsy_showOrderMonth(${year});]]>
+    </select>
+    
+	<!-- 025 前端显示数据 -->
+    <select id="getCandlsByPeriod" resultType="ea.service.res.dto.KlinesDto" parameterType="map">
+    	<![CDATA[call zsy_getCandlsByPeriod('${table}',${direction},${period},${size},${time});]]>
+    </select>
+    
+    <!-- 026 前端显示数据突破背离数据 -->
+    <select id="getBrkDevInfo" resultType="ea.service.res.dto.BrkDevInfoDto" parameterType="map">
+    	<![CDATA[call zsy_getBrkDevInfo(${period}, ${bin}, ${end});]]>
+    </select>
+    
+    <!-- 未使用 023 根据周期和起始CNO得到分页数据  -->
+    <select id="getPageData" resultType="ea.service.res.dto.CandlesDto" parameterType="int">
+    	<![CDATA[call zsy_getPageData(${period}, ${bin}, ${end});]]>
+    </select>
+    
+	<select id="initData" resultType="ea.service.res.dto.InitDataMod" parameterType="map">
+    	<![CDATA[
+	    	select 1 as rno, id from ${table} where (oprice is null or otime is null) and type = ${Action_Type_Buy}
+				UNION All
+			select 2 as rno, id from ${table} where (oprice is null or otime is null) and type = ${Action_Type_Sell}
+    	]]>
+    </select>
+    
+	<select id="InMarketInfoDto" resultType="ea.service.res.dto.InitDataMod" parameterType="map">
+    	<![CDATA[
+	    	select 1 as rno, id from ${table} where (oprice is null or otime is null) and type = ${Action_Type_Buy}
+				UNION All
+			select 2 as rno, id from ${table} where (oprice is null or otime is null) and type = ${Action_Type_Sell}
+    	]]>
+    </select>
+       
+</mapper>

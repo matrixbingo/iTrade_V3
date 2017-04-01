@@ -1,0 +1,15 @@
+#box{width:500px;font-size:12px}
+
+#box ul{margin:0;padding:0;list-style:none}
+
+#box #tab{height:25px;padding-left:10px;border-bottom:1px solid #AACBEE}
+
+#box #tab li{width:80px;height:18px;padding-top:7px;margin-right:10px;text-align:center;float:left;background:#F3F8FD;cursor:pointer}
+
+#box #tab li.on{width:78px;height:19px;padding-top:5px;border:1px solid #AACBEE;border-bottom:none;color:#00f;background:#E8F2F7;position:relative;top:1px}
+
+#box #tab_con{border:1px solid #AACBEE;border-top:none;padding:4px;}
+
+#box #tab_con li{display:none}
+
+#box #tab_con #tab_con_1{display:block} 

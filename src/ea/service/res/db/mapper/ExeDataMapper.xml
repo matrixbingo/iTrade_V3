@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ea.service.res.db.mapper.ExeDataMapper">
+	
+	<!-- 001各周期分笔 ，同时返回两个Fx和Macd结果集-->
+    <select id="exeFx" parameterType="int" resultType="ea.service.res.dto.BaseDto">
+        <![CDATA[call zsy_exeFx(${period}, ${cno}, ${fx_cno});]]>
+    </select>
+    
+	<!-- 009 添加remark数据 ，添加返回1，未添加返回0-->
+    <update id="addRemark" parameterType="map">  
+        <![CDATA[call zsy_addRemark(${period},${cno},${type},${dir},${time},${price},${bno});]]>
+    </update>
+    
+   	<!-- 010 根据对应周期清洗t_remark对应t_form已经清洗过的数据，返回清洗的t_remark的cno(逗号分隔) -->
+    <select id="clearRemarkByPeriod" parameterType="String" resultType="ea.service.res.dto.BaseDto">  
+        <![CDATA[call zsy_clearRemarkByPeriod('${periods}');]]>
+    </select>
+    
+	<!-- 016 添加dev数据,联合主键重复不添加 -->
+    <update id="addDevRemark" parameterType="map">  
+        <![CDATA[call zsy_addDevRemark(${period},${cno},${updn},${dir},${dev_cno},${price},${time},${kdif1},${kdif2},${ang1},${ang2},${ang3},${md1},'${cnos}');]]>
+    </update>
+    
+    <!-- 018 添加brk数据,联合主键重复不添加 -->
+    <update id="addBrkRemark" parameterType="map">  
+        <![CDATA[call zsy_addBrkRemark(${period},${ecno},${updn},${dir},${cno},${brk_cno},${price},${time});]]>
+    </update>
+    
+    <!-- 清空表 -->
+	<update id="truncateTable" parameterType="String"> 
+		TRUNCATE TABLE ${table}; 
+	</update>
+	
+	 <!-- 025 根据年份保存表数据 -->
+	<update id="saveTable" parameterType="String">
+		call zsy_saveTable('${table}','${year}'); 
+	</update>
+	
+	<!-- 026 转换成内存表 -->
+	<update id="changeEngine" parameterType="String"> 
+		call zsy_changeEngine('${table}', '${type}');
+	</update>
+
+	<!-- 027 添加进场 -->
+	<insert id="addOrder" parameterType="ea.service.res.dto.OrderDto">
+		call zsy_addOrder(#{version},#{ecno}, #{type}, #{icno}, #{ocno}, #{dir}, #{state}, 
+						#{in_dvt05},#{in_dvt10},#{in_dvt30},
+						#{in_brk05_dvt},#{in_brk10_dvt},
+						#{ot_dvt05},#{ot_dvt10},#{topbtm},
+						#{in_price},#{ot_price},#{in_time},#{ot_time});
+    </insert>
+    
+   	<!-- 028 更新进场 -->
+	<update id="updateOrder" parameterType="ea.service.res.dto.OrderDto">
+		call zsy_updateOrder(#{version}, #{ecno}, #{type}, #{icno}, #{ocno}, #{dir}, #{state}, 
+						#{in_dvt05},#{in_dvt10},#{in_dvt30},
+						#{in_brk05_dvt},#{in_brk10_dvt},
+						#{ot_dvt05},#{ot_dvt10},#{topbtm},
+						#{in_price},#{ot_price},#{in_time},#{ot_time});
+    </update>
+    
+    <!-- 030 如果区间最小值不低于前底，返回1：反之返回：0 -->
+    <select id="checkBreakMin" parameterType="int" resultType="ea.service.res.dto.BaseDto">  
+        <![CDATA[call zsy_checkBreakMin(${period}, ${bin_cno}, ${end_cno});]]>
+    </select>
+    
+    <!-- 031 如果区间最小值不高于前顶，返回1：反之返回：0 -->
+    <select id="checkBreakMax" parameterType="int" resultType="ea.service.res.dto.BaseDto">  
+        <![CDATA[call zsy_checkBreakMax(${period}, ${bin_cno}, ${end_cno});]]>
+    </select>
+    
+    <!-- 032 添加form数据 -->
+    <update id="addForm" parameterType="map">  
+        <![CDATA[call zsy_addForm(${period},${cno},${dir});]]>
+    </update>
+    
+	<!-- 033 添加KD数据 -->
+    <update id="addKD" parameterType="ea.service.res.data.indicator.KDDto">  
+        <![CDATA[REPLACE INTO t_kd(period, cno, time, k, d) VALUES(#{period}, #{cno}, #{time}, #{k}, #{d});]]>
+    </update>
+    
+	<update id="exeSql" parameterType="String">  
+        <![CDATA[${sql}]]>
+    </update>
+    
+    <!-- 得到order数据 初始化 -->
+    <select id="getOrderDtos" resultType="ea.service.res.dto.OrderDto" parameterType="int">  
+    	<![CDATA[select * from t_order where ot_time = 0 and ot_price = 0 and dir = ${dir}; ]]>
+    </select>
+    
+   
+	<select id="getPriceDto" resultType="ea.service.res.dto.PriceDto" parameterType="map">  
+    	<![CDATA[
+	    	select max(high) maxPrice, min(low) minPrice 
+	    	from t_candle 
+	    	where time BETWEEN ${start} and ${end}
+    	]]>
+    </select>
+    
+    
+    
+</mapper>

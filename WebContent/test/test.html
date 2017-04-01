@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript">
+      /*  var a = _.map([1, 2, 3], function (num) {
+            return num * 3;
+        });
+        // [3, 6, 9]
+        var b = _.map({one: 1, two: 2, three: 3}, function (num, key) {
+            return num * 3;
+        });
+        // [3, 6, 9]
+        console.log(a);
+        let [foo, [[bar], baz]] = [1, [[2], 3]];
+
+        console.log(let);-->*/
+
+        var json = {
+            'a'
+        :
+            1,
+                    'b'
+        :
+            2
+        }
+
+      var _trees  = '{"children":[{"menuKey":1,"permissions":[1,2,3,4],"path":"undefined,0","menuName":"客户管理","url":"hao2121.com","parentKey":"0","attributes":{},"description":"1212121","children":[[],{"menuKey":"apollo.ac.customer.contract","permissions":[],"path":"undefined,0,1","menuName":"协议管理","url":"","parentKey":"apollo.ac.customer","attributes":{},"description":"","children":[]}]},[]],"menuName":"系统菜单"}'
+      _trees = _trees.replace(/,\[\]/g, '').replace(/:\[\[\],/g, ':[');
+      console.log(_trees);
+    </script>
+</head>
+<body>
+sasas
+</body>
+</html>

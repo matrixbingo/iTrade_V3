@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Simple Table</title>
+<link rel="stylesheet" type="text/css" href="../../themes/normal/table.css"/>
+<script src="../../lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        /* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+        /* For cell text alignment */
+        $("table td:first-child, table th:first-child").addClass("first");
+        /* For removing the last border */
+        $("table td:last-child, table th:last-child").addClass("last");
+    });
+
+</script>
+
+</head>
+<body>
+
+<!--<div id="content">-z->
+
+    <table cellspacing="0">
+    <tr><th>Task Details</th><th>Indicator</th><th>Signal</th></tr>
+    <tr><td>MACD</td><td><div id="macd_1"></div></td><td><div id="macd_2"></div></td></tr>
+    <tr><td>KD</td><td><div id="kd_k"></div></td><td><div id="kd_d"></div></td></tr>
+    <tr><td>Page Info</td><td><div id="id12"></div></td><td>Yes</td></tr>
+    <tr><td>Take a stretch break</td><td>0%</td><td>Yes</td></tr>
+    <tr><td>Post this stuff on the interweb</td><td>100%</td><td>Yes</td></tr>
+    </table>
+
+<!--</div>-->
+
+</body>
+</html>

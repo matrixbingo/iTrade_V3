@@ -1,0 +1,149 @@
+ul {
+    margin: 0;
+}
+
+ul li {
+    list-style-type: none;
+    padding-bottom: 6px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.button-list {
+    float: right;
+    vertical-align: middle;
+}
+
+.panel-heading-only {
+    background-color: #d9edf7;
+    color: #31708f;
+}
+
+.panel-heading {
+    height: 40px;
+    font-weight: bold;
+}
+
+.panel-heading .sub-panel-heading {
+    font-size: 12px;
+}
+
+.panel-body ul li {
+    list-style-type: none;
+    padding-bottom: 6px;
+    text-indent: -3em;
+    word-wrap: break-word;
+}
+
+#main-panel .table-info th {
+    font-size: 14px;
+}
+
+.modal-vlg {
+    width: 99%;
+}
+
+.glyphicon-info-sign {
+    color: red;
+}
+
+.glyphicon-question-sign {
+    color: chocolate;
+}
+
+.glyphicon-remove {
+    color: red;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+.iframe-content {
+    border: 0;
+    padding: 0;
+    height: 900px;
+    width: 800px;
+    text-align: center;
+    border-color: #808080;
+}
+
+.button-list-floater {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    z-index: 1000;
+}
+
+.success-submit {
+    font-weight: bolder;
+    color: green;
+}
+
+.failure-submit {
+    font-weight: bolder;
+    color: red;
+}
+
+.div-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.close-full-screen {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    z-index: 1000;
+}
+
+.process-flow-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+#full-screen-list {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#full-screen-list > .slides > .slide > .slide-content {
+    margin-right: 10%;
+}
+
+.draw-back-reason-text {
+    width: 100%;
+}
+
+.draw-back-des {
+    background-color: #dcdcdc;
+}
+
+.show-license-special-approval {
+    color: darkred;
+}
+
+.open-all {
+    float: right;
+}
+
+/*
+ * 新增样式 银行账户审核专用
+ */
+.col-md-3-bank{
+    padding-right: 10px;
+    padding-left: 10px
+}
+.row-bank{
+    margin-right: -10px;
+    margin-left: -10px
+}
+
+/*.blueimp-gallery > img{*/
+/*z-index: 1000;*/
+/*}*/

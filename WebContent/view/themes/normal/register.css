@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* register */
+.reg-block{background:#e5e5e5;height:100%;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);}
+.reg-message{padding:0 15px;border-bottom:1px solid #b5afaf;}
+.reg-message-title{color:#030303;font-size:20px;text-align:center;padding:4px 0;}
+.reg-message-title i{display:inline-block;width:25px;height:25px;background:url(../../images/tips_ok.png) no-repeat 0 0;background-size:25px 25px;vertical-align:middle;line-height:25px;margin-right:9px;position:relative;top:-2px;}
+.reg-message-detail{color:#2b2a2a;font-size:15px;line-height:22px;padding:0 0 3px;}
+.reg-message-detail span{color:#2987d2;font-size:17px;}
+.reg-confirm{padding:6px 0 0;color:#2b2a2a;}
+.reg-confirm-title{color:#2b2a2a;font-size:15px;padding:0 0 3px;margin:0 15px;}
+.reg-confirm-meta{color:#2987d2;font-size:12px;line-height:20px;margin:0 15px 8px;}
+.reg-confirm-phone{margin:0 15px;}
+.reg-confirm-phone-i{}
+.reg-confirm-phone-s{width:120px;margin-left:5px;}
+.reg-confirm-phone-hr{height:1px;width:100%;zoom:1;background:#cad4de;}
+.reg-confirm-phone-fm{width:100%;}
+.reg-confirm-ipt{line-height:normal;line-height:22px\9;height:50px;margin:0 auto;font-size:15px;color:#2b2a2a;padding:0 16px;display:block;border:none;background:#fff;}
+.reg-confirm-ipt::-webkit-input-placeholder{color:#999a9c;}
+.reg-confirm-ipt:-moz-placeholder{color:#999a9c;}
+.reg-confirm-ipt::-moz-placeholder{color:#999a9c;}
+.reg-confirm-ipt:-ms-input-placeholder{color:#999a9c;}
+.reg-confirm-btn{background:#2987d2;color:#fff;font-size:18px;line-height:50px;text-align:center;cursor:pointer;}
+.reg-confirm-phone-msg{padding:5px 0 0 5px;font-size:15px;}
+.reg-confirm-phone-cr{color:#686c75;font-size:12px;line-height:20px;padding:9px 0 12px;}
+.reg-confirm-phone-cr i{background:#f4f4f4;border:1px solid #999a9c;width:18px;height:18px;float:left;margin-right:5px;}
+.reg-confirm-phone-cr i.checked{background:#f4f4f4 url(../../images/checkbox1.png) no-repeat 0 0;background-size:18px 18px;}
+.reg-confirm-phone-cr a{color:#2987d2;}
+.reg-confirm-mail{padding:15px 0 0;}
+.reg-confirm-mail-hr{font-size:15px;color:#b5afaf;position:relative;text-align:center;height:25px;line-height:25px;margin:0 0 5px;}
+.reg-confirm-mail-hr span{padding:0 8px;background:#e5e5e5;display:inline-block;position:relative;z-index:2;}
+.reg-confirm-mail-hr div{border:1px solid #b5afaf;position:absolute;top:50%;left:0;width:100%;z-index:1;}
+.reg-confirm-mail-i{padding:0 0 14px;width:100%;}
+.reg-confirm-mail-s{padding:0 0 14px;}
+.reg-confirm-mail-fm{margin:0 15px;}
+.reg-block .touched{opacity:0.6;}
+/* login */
+.loginBox{width:100%;height:100%;border:none;position:absolute;z-index:1000;left:0;top:-100%;margin:0;background:#000;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);}
+.loginBox-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background:url(../../images/body-bg-1.jpg) no-repeat center 0;background-size:cover;}
+.loginBox-inner{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1002;}
+.loginBox-close{padding:0;height:50px;width:100%;}
+.loginBox-closeBtn{background:url(../../images/matter_close.png) no-repeat 41px center;float:right;background-size:22px 22px;width:100px;height:100%;cursor:pointer;}
+.loginBox-form{padding:0;margin:0 15px;}
+.loginBox label.login_lb{margin:0;display:block;height:36px;line-height:36px;padding:8px 30px 8px 60px;color:#fff;font-size:16px;}
+.loginBox label.login_lb_user{border-bottom:1px solid #cad4de;background:#fff url(../../images/input_user.png) no-repeat 20px center;background-size:27px 18px;}
+.loginBox label.login_lb_pasw{background:#fff url(../../images/input_pawd.png) no-repeat 20px center;background-size:27px 18px;}
+.loginBox input.login_ipt{border:none;margin:0 auto;display:block;line-height:normal;line-height:22px\9;height:36px;padding:0;width:100%;color:#222;font-size:16px;}
+.loginBox input.login_ipt::-webkit-input-placeholder{color:#999a9c;}
+.loginBox input.login_ipt:-moz-placeholder{color:#999a9c;}
+.loginBox input.login_ipt::-moz-placeholder{color:#999a9c;}
+.loginBox input.login_ipt:-ms-input-placeholder{color:#999a9c;}
+.loginBox .login_btns{padding:15px 0 0;margin:0;width:100%;overflow:hidden;position:relative;}
+.loginBox .login_btns div{color:#fff;font-size:20px;line-height:50px;text-align:center;cursor:pointer;}
+.loginBox .login_btns_reg{background:#fe9900;}
+.loginBox .login_btns_sub{background:#2987d2;margin-left:10px;}
+.loginBox-forget{text-align:right;color:#fff;font-size:14px;padding:8px 0 0;line-height:30px;}
+.loginBox-forget a{color:#fff;text-decoration:underline;}
+.loginBox-others{position:absolute;bottom:5%;left:0;width:100%;}
+.loginBox-hr{font-size:16px;color:#2987d2;position:relative;text-align:center;height:30px;line-height:30px;width:100%;margin:0 0 5px;}
+.loginBox-hr-l,.loginBox-hr-r{position:relative;}
+.loginBox-hr-l span,.loginBox-hr-r span{border-top:1px solid #2f81bb;display:block;height:10px;position:relative;top:14px;}
+.loginBox-hr-c{max-width:60px;}
+.loginBox-by-qq{margin:0 15px;background:#2987d2 url(../../images/arrow_white_more.png) no-repeat 91.2% center;background-size:12px 23px;height:45px;line-height:45px;color:#fff;font-size:18px;text-align:center;cursor:pointer;}
+.loginBox-by-qq i{display:inline-block;width:26px;height:29px;background:url(../../images/qq_ico.png) no-repeat 0 0;background-size:26px 29px;position:relative;top:7px;margin-right:12px;}
+.loginBox .touched{opacity:0.6;}
+.loginBox-inner1{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1002;}
+.regRuleBox{top:0px;position: fixed;}
+.loginBox-form1{padding:0;margin:0;}
+.loginBox-bg1{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color: #d6e9f8;background-size:cover;}
+/* operate-advice */
+.operate-advice{width:100%;background:#e5e5e5;height:100%;}
+.operate-advice-title{color:030303;font-size:20px;line-height:50px;padding:0 15px;}
+.operate-advice-fm{width:100%;}
+.operate-advice-sms{width:100%;margin:4px 0 0;}
+.operate-advice-i{margin-left:15px;padding:0 16px;background:#fff;}
+.operate-advice-s{width:120px;margin:0 15px;}
+.operate-advice-hr{height:1px;width:100%;zoom:1;background:none;}
+.operate-advice-ipt{height:50px;line-height:50px;font-size:15px;color:#2b2a2a;padding:0;display:block;border:none;background:none;}
+.operate-advice-ipt::-webkit-input-placeholder{color:#999a9c;}
+.operate-advice-ipt:-moz-placeholder{color:#999a9c;}
+.operate-advice-ipt::-moz-placeholder{color:#999a9c;}
+.operate-advice-ipt:-ms-input-placeholder{color:#999a9c;}
+.operate-advice-btn{background:#2987d2;color:#fff;font-size:18px;line-height:50px;text-align:center;cursor:pointer;}
+.operate-advice-hr{font-size:15px;color:#b5afaf;position:relative;text-align:center;height:25px;line-height:25px;margin:0 0 8px;}
+.operate-advice-hr span{padding:0 8px;background:#e5e5e5;display:inline-block;position:relative;z-index:2;}
+.operate-advice-hr div{border:1px solid #b5afaf;position:absolute;top:50%;left:0;width:100%;z-index:1;}
+.operate-advice-sms-s{margin:0 15px;}
+.operate-advice-sms-btn{background:#2987d2;color:#fff;font-size:18px;line-height:50px;text-align:center;cursor:pointer;}
+@media only screen and (min-device-height : 481px) {
+.loginBox-close{height:80px;}
+.loginBox-others{bottom:8%;}
+.loginBox-forget{padding:15px 0 0;}
+.loginBox-hr{margin:0 0 15px;}
+}

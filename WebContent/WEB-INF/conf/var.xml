@@ -1,0 +1,26 @@
+<map>
+  <entry>
+    <int>1</int>
+    <ea.service.res.dto.CandlesDto>
+      <period>0</period>
+      <cno>1</cno>
+      <time>4444444</time>
+      <open>0.8766</open>
+      <close>0.0</close>
+      <high>1.2312</high>
+      <low>0.9887</low>
+    </ea.service.res.dto.CandlesDto>
+  </entry>
+  <entry>
+    <int>2</int>
+    <ea.service.res.dto.CandlesDto>
+      <period>0</period>
+      <cno>2</cno>
+      <time>6666666</time>
+      <open>4.8766</open>
+      <close>0.0</close>
+      <high>3.2312</high>
+      <low>3.9887</low>
+    </ea.service.res.dto.CandlesDto>
+  </entry>
+</map>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Dashboard I Admin Panel</title>
+    <!-- 页面模板 -->
+	<link rel="stylesheet" href="HTML5%20Admin%20Template/css/layout.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="../../lib/jquery-1.9.1.min.js"></script>
+	<script src="HTML5%20Admin%20Template/js/hideshow.js" type="text/javascript"></script>
+	<script src="HTML5%20Admin%20Template/js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="HTML5%20Admin%20Template/js/jquery.equalHeight.js"></script>
+
+    <!-- 显示 -->
+
+
+    <script src="../../lib/jquery.transit.min.js"></script>
+
+
+
+    <script type="text/javascript" src="../../js/plugin/storage.js"></script>
+    <script type="text/javascript" src="../../js/plugin/update.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationUtils.js"></script>
+    <script type="text/javascript" src="../../js/utils/utils.js"></script>
+    <script type="text/javascript" src="../../js/jquery.header.js"></script>
+    <script type="text/javascript" src="../../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../../js/jquery.iscrollAssistant.js"></script>
+    <script type="text/javascript" src="../../js/utils/md5.js"></script>
+    <!--首页面js-->
+    <script type="text/javascript" src="../../js/news/cPlateNewsPageFun.js"></script>
+    <script type="text/javascript" src="../../js/news/newsSubscribe_private.js"></script>
+    <script type="text/javascript" src="../../js/news/characteristicPlate_private.js"></script>
+    <script type="text/javascript" src="../../js/setUp/setUpAndLoad_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.touchEvent.js"></script>
+    <script type="text/javascript" src="../../js/news/realTimeObservationPage.js"></script>
+    <script type="text/javascript" src="../../js/index/navigation_private.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <!--次级页面js-->
+    <script type="text/javascript" src="../../js/news/newsDetailsPage.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationQuery.js"></script>
+    <script type="text/javascript" src="../../js/register/register_private.js"></script>
+    <script type="text/javascript" src="../../js/register/forgetPassword_private.js"></script>
+    <script type="text/javascript" src="../../js/feedback/feedback_private.js"></script>
+    <script type="text/javascript" src="../../js/feedback/operateAdvice_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsDetails.js"></script>
+    <script type="text/javascript" src="../../js/quotation/diagnosisShares_private.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股详细start -->
+    <script type="text/javascript" src="../../js/quotation/quotationChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.timeChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.kLineChart_Minute.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股编辑start -->
+
+    <script type="text/javascript" src="index_minute.js"></script>
+	<script type="text/javascript">
+
+        var binTime_EU = '20120105182000';
+
+        $(document).ready(function () {
+            $('#massage').hide();
+
+            creat_k_chart(binTime_EU);
+        });
+
+
+
+    $(function(){
+        $('.column').equalHeight();
+    });
+
+    function hidArticle(){
+        $('#sidebar').slideToggle('slow',null);
+
+    }
+
+    function selectPeriod(period){
+        console.log('period ---> ' + period);
+    }
+</script>
+
+</head>
+
+<body>
+
+	<header id="header">
+		<hgroup>
+			<h1 class="site_title"><a href="">Website Admin</a></h1>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site">
+            <a href="javascript:hidArticle();">View Site</a></div>
+		</hgroup>
+	</header> <!-- end of header bar -->
+	
+	<section id="secondary_bar">
+		<div class="user">
+			<p>John Doe (<a href="#">3 Messages</a>)</p>
+			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
+		</div>
+		<div class="breadcrumbs_container">
+			<article class="breadcrumbs">
+                <a href="javascript:selectPeriod(5);">&nbsp&nbspM5&nbsp&nbsp</a>
+                <div class="breadcrumb_divider"></div>
+                <a href="javascript:selectPeriod(10);">&nbsp&nbspM10&nbsp&nbsp</a>
+                <div class="breadcrumb_divider"></div>
+                <a href="javascript:selectPeriod(30);">&nbsp&nbspM30&nbsp&nbsp</a>
+                <div class="breadcrumb_divider"></div>
+                <a href="javascript:selectPeriod(60);">&nbsp&nbspH1&nbsp&nbsp</a>
+                <div class="breadcrumb_divider"></div>
+                <a href="javascript:selectPeriod(240);">&nbsp&nbspH4&nbsp&nbsp</a>
+            </article>
+		</div>
+	</section><!-- end of secondary bar -->
+
+	<aside id="sidebar" class="column">
+        <form class="quick_search">
+            <input type="text" value="2014-04-09 01:03" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;"/>
+        </form>
+		<hr/>
+		<h3>MACD</h3>
+		<ul class="toggle">
+			<li class="icn_new_articl"><a href="#" id="macd_1"></a></li>
+			<li class="icn_edit_article"><a href="#"></a><div id="macd_2"></div></li>
+		</ul>
+		<h3>KD</h3>
+		<ul class="toggle">
+			<li class="icn_categories"><a href="#"></a><div id="kd_k"></div></li>
+			<li class="icn_tags"><a href="#"></a><div id="kd_d"></div></li>
+		</ul>
+		<h3>Fx</h3>
+		<ul class="toggle">
+			<li class="icn_folder"><a href="#"></a><div id="fx_1"></div></li>
+			<li class="icn_photo"><a href="#"></a><div id="fx_2"></div></li>
+			<li class="icn_audio"><a href="#"></a><div id="fx_3"></div></li>
+			<li class="icn_video"><a href="#"></a><div id="fx_4"></div></li>
+		</ul>
+		<h3>Numbers</h3>
+		<ul class="toggle">
+			<li class="icn_settings"><a href="#"></a> <div id="total_id"></div></li>
+			<li class="icn_security"><a href="#"></a><div id="id12"></div></li>
+
+		</ul>
+        <h3>Time</h3>
+        <ul class="toggle">
+            <li class="icn_view_users"><a href="#"></a><div id="bin_id"></div></li>
+            <li class="icn_jump_back"><a href="#"></a><div id="end_id"></div></li>
+        </ul>
+		
+		<footer>
+			<hr />
+			<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
+			<p>Theme by <a href="http://www.medialoot.com">MediaLoot</a></p>
+		</footer>
+	</aside><!-- end of sidebar -->
+
+    <!-- 显示 -->
+	<section id="main" class="column">
+
+        <div style="position:relative;">
+            <div id="chartContent" class="chartContent" style="display:block;height:700px;width:84%"></div>
+        </div>
+
+        <div id="massage" class="cl01" style="position: absolute;border: 0px solid rgb(51, 51, 51);
+        white-space: nowrap; transition: left 0.4s, top 0.4s; -webkit-transition:
+         left 0.4s, top 0.4s; background-color: rgba(0, 0, 0, 0.7);
+         border-top-left-radius: 4px; border-top-right-radius: 4px;
+         border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;
+         color: rgb(255, 255, 255); text-decoration: none; font-family: Arial, Verdana,
+          sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 100px; top: 62px;">
+            上证指数 2013/4/25<br> 开盘 : 2213.19 最高 : 2224.63<br> 收盘 : 2199.31 最低 : 2191.85
+        </div>
+
+	</section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <meta charset="UTF-8">
+    <title>broostip test</title>
+
+    <!-- 图片轮转样式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" media="all" type="text/css" href="css/style-demo.css">
+    <link rel="stylesheet" type="text/css" href="css/image.css">
+    <!-- 大图样式 -->
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">-->
+    <link rel="stylesheet" href="css/blueimp-gallery.css">
+    <link rel="stylesheet" href="css/blueimp-gallery-indicator.css">
+    <link rel="stylesheet" href="css/gallery-image.css">
+<!--    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/detail.css">-->
+    <link rel="stylesheet" href="css/image.css">
+<!--    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">-->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/picture.css">
+<!--    <link rel="stylesheet" href="/hu/headunified/static/css/head.css">-->
+    
+    <!-- 新 Bootstrap 核心 CSS 文件-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入）-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="detail.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>-->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--图片乱转 -->
+    <script src="js/jquery.easing-1.3.js"></script>
+    <script src="js/jquery.mousewheel-3.1.12.js"></script>
+    <script src="js/jquery.jcarousellite.min.js"></script>
+
+
+
+ <!--   <script src="js/picture.js"></script>-->
+
+
+
+    </head>
+<body>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-body panel-heading-only">
+            <div class="">
+                <div class="col-md-7">
+                    <h2>银行账号审核</h2>
+                </div>
+                <!--<div class="col-md-5">
+                    <div class="process-flow-btn">
+                        <div class="button-list">
+                            <div class="btn-group button-group">
+                                <button type="button" class="btn btn-default btn-primary test-flow-btn"
+                                        data-node-name="银行账号审核" data-submit-name="打回" data-pid="17333">打回
+                                </button>
+                                <button type="button" class="btn btn-default btn-primary test-flow-btn"
+                                        data-node-name="银行账号审核" data-submit-name="通过" data-pid="17333">通过
+                                </button>
+                            </div>
+                            &nbsp;&nbsp;
+                            <div class="btn-group">
+                                <button class="btn btn-primary previousProcess">上一个</button>
+                                <button class="btn btn-primary nextProcess">下一个</button>
+                            </div>
+                            &nbsp;&nbsp;
+                            <a href="http://apollo.alpha.dp/audit/todo?userID=-48571&amp;q=&amp;processType=0&amp;page=104"
+                               class="btn btn-primary" id="go-back">返回</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!-- 具体信息部分-->
+        <div class="row row-bank">
+            <div class="col-md-3 col-md-3-bank" id="left-panel">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="col-md-12">
+                            银行账号变更审核信息
+                        </div>
+                    </div>
+                    <div class="panel-body" style="padding: 10px 10px;height: 410px">
+                        <div class="col-md-12" style="height: 350px">
+                            <div>
+                                <ul>
+                                    <li><b>客户名称</b>：啥地方试试伐</li>
+                                    <li><b>开户人</b>：舒服发</li>
+                                    <li><b>支行名称</b>：永定县支行城关分理处</li>
+                                    <li><b>收款账号</b>：123213131321312321</li>
+                                    <li><b>申请变更日期</b>：2015-05-19</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <hr>
+                                    <h5>K21214343546</h5>
+                                <hr>
+                            </div>
+
+                            <div style="padding: 20px">
+                                <div class="row" style="text-align: center;margin-bottom: 14px">
+                                    <button class="btn btn-primary show-history" style="width: 150px">显示流程历史信息</button>
+                                </div>
+                                <div class="row" style="text-align: center;margin-top: 14px">
+                                    <button class="btn btn-success show-customerChangeLog" style="width: 150px">显示客户名变更历史</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--<div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="col-md-12">
+                            打回原因操作
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="checkbox-reasons">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="C1合同开户名未填">C1合同开户名未填
+                                            <input type="text" class="draw-back-reason-text" hidden="hidden"
+                                                   data-title="C1合同开户名未填">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="C2系统开户名与合同不一致">C2系统开户名与合同不一致
+                                            <input type="text" class="draw-back-reason-text" hidden="hidden"
+                                                   data-title="C2系统开户名与合同不一致">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="D1协议未上传">D1协议未上传
+                                            <input type="text" class="draw-back-reason-text" hidden="hidden"
+                                                   data-title="D1协议未上传">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="D2开户人身份证未上传">D2开户人身份证未上传
+                                            <input type="text" class="draw-back-reason-text" hidden="hidden"
+                                                   data-title="D2开户人身份证未上传">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="D3附件不清晰">D3附件不清晰
+                                            <input type="text" class="draw-back-reason-text" hidden="hidden"
+                                                   data-title="D3附件不清晰">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="Q1变更书签署需与原合同一致">Q1变更书签署需与原合同一致
+                                            <input type="text" class="draw-back-reason-text" hidden="hidden"
+                                                   data-title="Q1变更书签署需与原合同一致">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" class="draw-back-reason" value="Q2其他">Q2其他<br>
+                                            <textarea type="text" rows="6" cols="27" class="draw-back-reason-text"
+                                                      hidden="hidden" data-title="Q2其他"></textarea>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <span><b>通过/打回备注</b></span>
+                            <textarea cols="32" rows="10" class="draw-back-des" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="col-md-9 col-md-3-bank" id="main-panel">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        资质类型： 营业执照
+                    </div>
+                    <div class="row" style="height: 410px">
+                        <div class="col-md-10">
+                            <div class="col-md-12">
+                               <div class="main-image-view">
+                                    <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel"
+                                         style="background:#fff;box-shadow:0 0 0 #fff">
+                                        <div class="slides"></div>
+                                        <h3 class="title"></h3>
+                                        <a class="prev">‹</a>
+                                        <a class="next">›</a>
+                                        <a class="play-pause"></a>
+                                        <ol class="indicator"></ol>
+                                    </div>
+                                    <div id="full-screen-list" class="blueimp-gallery" style="display: none">
+                                        <div class="slides"></div>
+                                        <h3 class="title"></h3>
+                                        <a class="prev">‹</a>
+                                        <a class="next">›</a>
+                                        <a class="play-pause"></a>
+                                        <ol class="indicator"></ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1" style="height: 410px">
+                            <div style="padding: 20px;margin-top: 150px">
+                                <div class="row" >
+                                    <button class="btn btn-default show-history" style="width: 60px">全屏</button>
+                                </div>
+                                <div class="row" style="text-align: center;margin-top: 14px">
+                                    <button class="btn btn-default show-customerChangeLog" style="width: 60px">旋转</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="panel panel-info input-group">
+        <span class="input-group-addon panel-heading-only" style="border : 0px">
+           相<br/><br/>关<br/><br/>附<br/><br/>件<br/>
+        </span>
+        <span class="input-group-addon" style="border : 0px; background-color:#fff">
+         <button type="button" class="btn btn-default btn-lg btn-block prev-no-style" style="width: 10px;height:80px;padding:1px 16px 1px 7px;font-size:25px">&lsaquo;</button>
+        </span>
+        <div class="panel-body">
+            <div id="jcl-demo">
+                <div class="custom-container mouseWheelButtons">
+
+                    <div class="carousel" style="border:0px;background-color: #fff">
+                        <ul>
+                            <li>
+                                <div class="img-file" style="text-indent:0em">
+                                    <img src="image/1.jpg" data-normal-src="image/1.jpg"
+                                         data-pid="processID" data-image-id="image.imageID"
+                                         data-node-name="nodeName" data-clone-page="clonePage"
+                                         data-img-index="image.indexID" alt="image.imageLabel"
+                                         class="img-thumbnail main-page-img bank-account-img">
+
+                                    <p>银行账户22563366666655555的附件</p>
+                                </div>
+                            </li>
+                            <li><img src="image/2.jpg" data-normal-src="image/2.jpg"></li>
+                            <li><img src="image/3.jpg"></li>
+                            <li><img src="image/4.jpg"></li>
+                            <li><img src="image/5.jpg"></li>
+                            <li><img src="image/6.jpg"></li>
+                            <li><img src="image/7.jpg"></li>
+                            <li><img src="image/8.jpg"></li>
+                            <li><img src="image/9.jpg"></li>
+                            <li><img src="image/10.jpg"></li>
+                            <li><img src="image/11.jpg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="input-group-addon" style="border : 0px; background-color:#fff">
+            <button type="button" class="btn btn-default btn-lg btn-block next-no-style" style="width: 10px;height:80px;padding:1px 16px 1px 7px;font-size:25px">&rsaquo;</button>
+        </span>
+    </div>
+
+
+    <div class="panel panel-info" style="padding: 15px">
+        <div class="row">
+            <div class="col-md-7">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th style="width: 10%">名称</th>
+                        <th style="width: 80%">城市</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Tanmay</td>
+                        <td>Bangalore</td>
+                    </tr>
+                    <tr>
+                        <td>Sachin</td>
+                        <td>Mumbai</td>
+                    </tr>
+                    <tr>
+                        <td>Uma</td>
+                        <td>Pune</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-12">
+                    <div class="reason-area">
+                        <p>协议通过/打回备注</p>
+                        <textarea rows="3" cols="55" value=""></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="button-list">
+                <div class="btn-group button-group">
+                    <button type="button" class="btn btn-default btn-primary test-flow-btn" data-node-name="银行账号审核"
+                            data-submit-name="打回" data-pid="17354">打回
+                    </button>
+                    <button type="button" class="btn btn-default btn-primary test-flow-btn" data-node-name="银行账号审核"
+                            data-submit-name="通过" data-pid="17354">通过
+                    </button>
+                </div>
+
+                &nbsp;&nbsp;
+                <a href="http://apollo.alpha.dp/audit/todo?userID=-48571&amp;q=&amp;processType=0&amp;page=106"
+                   class="btn btn-primary" id="go-back">返回</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+
+    <script type="text/javascript">
+    $(".mouseWheelButtons .carousel").jCarouselLite({
+            btnNext: ".input-group-addon .next-no-style",
+            btnPrev: ".input-group-addon .prev-no-style",
+            mouseWheel: true,
+            visible: 7,
+            circular: false
+        });
+
+        $(".mouseWheelButtons img").click(function () {
+            $(".mouseWheelButtons .mid img").attr("src", $(this).attr("src"));
+        });
+
+    </script>
+
+    <script src="js/jquery.zoom.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/gallery/blueimp-helper.js"></script>
+    <script src="js/gallery/blueimp-gallery.js"></script>
+    <script src="js/gallery/blueimp-gallery-fullscreen.js"></script>
+    <script src="js/gallery/blueimp-gallery-indicator.js"></script>
+    <script src="js/gallery/blueimp-gallery-vimeo.js"></script>
+    <script src="js/gallery/jquery.blueimp-gallery.js"></script>
+    <script src="js/index.js"></script>
+
+</html>

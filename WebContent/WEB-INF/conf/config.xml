@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config desc="1:是 0:否">
+
+	<group desc="系统属性组">
+		<var name="isExactM5" value="1" desc="是否精确到M5，默认精确到M1"/>
+		<var name="isTest" value="1" desc="是否测试环境 "/>
+		<var name="isLastRun" value="0" desc="是否从上次结束时开始测试">
+			<!-- t_charas.t_clear.t_form.t_log.t_macd.t_section.t_stat.t_status.t_section.t_topbtm.t_break.t_deviate -->
+			<para name="clearTabs" value="t_charas.t_clear.t_form.t_log.t_section.t_status.t_section.t_break.t_deviate.t_order.t_stat.t_topbtm" desc="清空的表"/>
+		</var>
+		<var name="isCheckTrend" value="1" desc="是否判断趋势和突破前顶比较"/>
+		<var name="isUseTrend" value="0" desc="是否使用趋势参数"/>
+		<var name="pageNums" value="20000" desc="一页多少数据"/>
+	</group>
+	<group desc="突破信息组">
+		<verison name="isDvtBreak" value="1" desc="是否计算突破最近的背离点"/>
+		<verison name="isInMBreak" value="1" desc="是否计算突破最近的进场点"/>
+	</group>
+	<group desc="系统策略组">
+		<verison desc="v1">
+			<var name="isDn01" value="1"/>
+			<var name="isUp01" value="1"/>
+		</verison>
+		<verison desc="v2">
+			<var name="isDn02" value="1"/>
+			<var name="isUp02" value="1"/>
+		</verison>
+		<verison desc="v3">
+			<var name="isDn03" value="1"/>
+			<var name="isUp03" value="1"/>
+		</verison>
+		<verison desc="v4">
+			<var name="isDn04" value="1"/>
+			<var name="isUp04" value="1"/>
+		</verison>
+		<verison desc="v5">
+			<var name="isDn05" value="1"/>
+			<var name="isUp05" value="1"/>
+		</verison>
+	</group>
+	
+
+	<group desc="策略信息组">
+		<var name="tactics_package" value="ea.tactics.eo.group.tactics" desc="策略组所在的包名"/>
+		<var name="isBeili" 		value="0" 	desc="M5和M10是否加背离"/>
+		<var name="isTimeOrder" 	value="0" 	desc="是否需要时间顺序限制 "/>
+		<var name="isM01Minute" 	value="0" 	desc="是否需要1分钟进场条件"/>
+		<var name="isM05M10Minute" 	value="1" 	desc="是否需要5、10分钟突破进场条件"/>
+		<var name="isM30Loose" 		value="1" 	desc="是否使用M30宽松条件"/>
+		<var name="isM10Loose" 		value="1" 	desc="是否使用10宽松条件"/>
+		<var name="isExactTrade" 	value="0" 	desc="是否使用 M30非精确结果集、以便优化测试速度"/>
+	</group>
+	
+	<group desc="remark信息组">
+		<creator>
+			<var name="isRemark_beili" value="1" desc="beili是否使用存储记录"/>
+			<var name="isRemark_break" value="1" desc="break是否使用存储记录"/>
+			<var name="isRemark_sectn" value="0" desc="特征序列是否使用存储记录"/>
+		</creator>
+		<creator desc="清洗beili和break策略组">
+			<var name="isClearFx" value="0" desc="是否清洗分笔">
+				<para name="clearPeriods" value="0" desc="清洗哪些0:全部 其他用逗号分割"/>
+			</var>
+		</creator>
+	</group>
+	
+	<group desc="进出场策略信息组：进场优先判断">
+		<creator name="isInOutMarketTactics" value="1" desc="v2,v3,v4">
+			<var name="isIndexInvalid" value="0" desc="是否背离等失效出场">
+				<para name="isIndexInvalid_m10" value="1" desc="10分钟背离失效出场"/>
+				<para name="isIndexInvalid_m30" value="1" desc="30分钟背离失效出场"/>
+			</var>
+			<var name="isOutMarketPro_v4" value="1" desc="同类型已盈利，则出掉盈利单再做进场进场判断">
+				<para name="outMarketPro_v4" value="130" desc="时间的范围"/>
+			</var>
+			<var name="isDeficitNoMarket_v4" value="1" desc="是否同类型已有亏损不进场 ">
+				<para name="deficitNoMarket_v4" value="30" desc="时间范围 "/>
+			</var>
+			<var name="isExistInMarket_v4" value="1" desc="同类型单，指定时间内不重复进场 ">
+				<para name="existInMarket_v4" value="30" desc="指定时间 "/>
+			</var>
+			<var name="isExistTime" value="1" desc="所有类型，相同时间不重复进场"/>
+			<var name="isUseExDing_v4" value="1" desc="是否进场判断前顶点 "/>
+		</creator>
+		<creator name="isReInMarketCheck" value="1" desc="v2,v3,v4 反向策略组">
+			<var name="inMarket_version" value="0" desc="是否同类型"/>
+			<var name="inMarket_dir" value="1" desc="是否同dir"/>
+			<var name="inMarketCheck_t1" value="1" desc="同类型单，进场30分钟内亏损出场，分钟内不重复进场 ">
+				<para name="inMarket_t1" value="20" desc="指定时间 "/>
+				<para name="inMarket_t2" value="40" desc="指定时间 "/>
+			</var>
+			<var name="reInMarketCheck_t2" value="1" desc="同类型进场10分钟内亏损出场，进出场间隔20分钟内重复进场，反向做单">
+				<para name="reInMarket_t1" value="10" desc="指定时间 "/>
+				<para name="reInMarket_t2" value="20" desc="指定时间 "/>
+			</var>
+		</creator>
+		<creator>
+			<var name="isTimeOutMarket_v4" value="1" desc="是否进场时间在某范围内不出场 ">
+				<para name="timeOutMarket_v4" value="30" desc="进场时间在某范围内不出场 "/>
+			</var>
+			<var name="isPriceOutMarket_v4" value="1" desc="是否启动如果值相同则不出场 ">
+				<para name="priceOutMarket_v4" value="0" desc="差值"/>
+			</var>
+		</creator>
+	</group>
+	
+	<group desc="移动出场策略">
+		<creator name="isMoveOutMarket" value="0" desc="是否启动移动出场策略 ">
+			<!--<var desc="默认M30">
+				<para key="startMove" value="35" desc="移动策略启动值"/>
+				<para key="margin" value="15" desc="浮动空间"/>
+				<para key="stopLoss" value="35" desc="初始止损点"/>
+				<para key="startProfit" value="30" desc="盈利启动值"/>
+				<para key="stopProfit" value="15" desc="盈利出场值"/>
+			</var>-->
+			<var desc="v1">
+				<para key="startMove_v1" value="35" desc="移动策略启动值"/>
+				<para key="margin_v1" value="15" desc="浮动空间"/>
+				<para key="stopLoss_v1" value="10" desc="初始止损点"/>
+				<para key="startProfit_v1" value="18" desc="盈利启动值"/>
+				<para key="stopProfit_v1" value="10" desc="盈利出场值"/>
+			</var>
+			<var desc="v2">
+				<para key="startMove_v2" value="100" desc="移动策略启动值"/>
+				<para key="margin_v2" value="30" desc="浮动空间"/>
+				<para key="stopLoss_v2" value="20" desc="初始止损点"/>
+				<para key="startProfit_v2" value="20" desc="盈利启动值"/>
+				<para key="stopProfit_v2" value="10" desc="盈利出场值"/>
+			</var>
+			<var desc="v3">
+				<para key="startMove_v3" value="100" desc="移动策略启动值"/>
+				<para key="margin_v3" value="30" desc="浮动空间"/>
+				<para key="stopLoss_v3" value="20" desc="初始止损点"/>
+				<para key="startProfit_v3" value="20" desc="盈利启动值"/>
+				<para key="stopProfit_v3" value="10" desc="盈利出场值"/>
+			</var>
+			<var desc="V4">
+				<para key="startMove_v4" value="35" desc="移动策略启动值"/>
+				<para key="margin_v4" value="20" desc="浮动空间"/>
+				<para key="stopLoss_v4" value="30" desc="初始止损点"/>
+				<para key="startProfit_v4" value="20" desc="盈利启动值"/>
+				<para key="stopProfit_v4" value="10" desc="盈利出场值"/>
+			</var>
+			<var desc="V5">
+				<para key="startMove_v5" value="100" desc="移动策略启动值"/>
+				<para key="margin_v5" value="30" desc="浮动空间"/>
+				<para key="stopLoss_v5" value="20" desc="初始止损点"/>
+				<para key="startProfit_v5" value="20" desc="盈利启动值"/>
+				<para key="stopProfit_v5" value="10" desc="盈利出场值"/>
+			</var>
+		</creator>
+		<creator name="isM10BBOutMarket" value="1" desc="是否启动10分钟背离+突破出场条件 ">
+			<var>
+				<para key="outM10Num" value="3" desc="突破和背离点差范围"/>
+			</var>
+		</creator>
+	</group>
+	
+	<group desc="数据库表信息组">
+		<var name="t_macd" value="t_macd" desc="t_macd/t_macdTest"/>
+		<var name="t_trade" value="t_trade" desc="测试记录存储的表名 t_tradeTest/t_trade"/>
+	</group>
+
+	<group desc="FX信息组">
+		<var name="isDbFx" value="0" desc="是否使用DbFx"/>
+		<var name="isMeFx" value="1" desc="是否使用MeFx"/>
+		<var name="isFxSave" value="0" desc="是否存储Fx数据"/>
+		<var name="fx_step03" value="15" desc="使用Step03最少顶底数"/>
+		<var name="fx_step04" value="10" desc="使用Step04最少顶底数"/>
+	</group>
+
+	<group desc="邮件提醒">
+		<var name="isMail" value="0" desc="是否发送邮件"/>
+	</group>
+
+</config>

@@ -1,0 +1,271 @@
+.marketsBodyHeader{
+    height: 33px;
+    background-color:#217BCC ;
+}
+.marketsBodyHeader .makertsBodyHeaderSelect{
+     color: #3598db;
+ }
+.marketsBodyHeader div{
+    text-align: center;
+    float: left;
+    width: 25%;
+    color: #f0f0f0;
+    font-weight:700;
+    font-size:15px;
+    margin-top: 5px;
+}
+#wrapperMarketsLR {
+    height: 100%;
+    width: 100%;
+}
+
+#scrollerMarketsLR {
+    width:400%;
+    height: 100%;
+
+}
+.thelistMarketsLR{
+    float:left;
+    width: 25%;
+    height: 100%;
+}
+.marketsIndexQuotation{
+    width: 25%;
+}
+
+#thelistMarkets {
+    width:100%;
+}
+#thelistMarkets .marketsIndex{
+    height:80px;
+    border-bottom:0;
+    border-top:0;
+    font-weight:700;
+    font-size:14px;
+}
+#thelistMarkets .marketsIndex div {
+    width:33%;
+    margin-top:10px;
+    float:left;
+}
+#thelistMarkets .marketsIndex div ul li{
+    height:20px;
+    border-bottom:0;
+    border-top:0;
+    text-align:center;
+}
+#thelistMarkets .marketsIndex div ul li span{
+    font-size:7px;
+	position:relative;
+	top:-2px;
+	font-family:sans-serif;
+}
+
+#thelistMarkets .marketsIndex div ul #marketsIndexValue{
+    height:20px;
+    font-size:10px;
+}
+
+#thelistMarkets .marketsIndustry{
+	border-bottom:0;
+	border-top:0;
+}
+#thelistMarkets .marketsIndustry div,#thelistMarkets .marketsList div{
+    margin-top:0px;
+}
+#thelistMarkets .title{
+	width:100%;
+	height:30px;
+	background-color:#D9E7F4;
+	color:#3598db;
+}
+#thelistMarkets .title div{
+    width:33%;
+    height:30px;
+    float:left;
+    text-align:center;
+}
+#thelistMarkets .title .title1{
+    font-weight:700;
+    font-size:15px;
+    height:30px;
+	line-height:30px;
+	width:33%;
+	text-align:left;
+}
+#thelistMarkets .title .title1 span{background:url(../../images/arrow_blue_more.png) no-repeat 0 0;background-size:6px 11px;width:6px;height:11px;display:inline-block;vertical-align:middle;margin:0 5px 0 16px;position:relative;top:-2px;transition:all 0.3s ease-in 0s;-webkit-perspective:1200px;-moz-perspective:1200px;-ms-perspective:1200px;perspective:1200px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
+#thelistMarkets .title.expanded .title1 span{-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);}
+#thelistMarkets .title .title2{
+    font-size:14px;
+    height:35px;
+	line-height:30px;
+	font-family:Tahoma;
+	letter-spacing:3px;
+	text-align:right;
+    margin-top:-5px;
+}
+#thelistMarkets .title .title2 span{padding:0px 20px 0 0;font-size: 30px;}
+#thelistMarkets .marketsIndustry .details{
+    width:100%;
+    font-weight:700;
+    height:188px;
+    font-size:13px;
+	-moz-transition:height 200ms ease-in;-ms-transition:height 200ms ease-in;-o-transition:height 200ms ease-in;-webkit-transition:height 200ms ease-in;transition:height 200ms ease-in;
+	overflow:hidden;
+}
+#thelistMarkets .marketsIndustry .details div{
+    height:94px;
+    width:33%;
+    float:left;
+}
+#thelistMarkets .marketsIndustry ul #marketsIndustryZF {
+    font-size:18px;
+    height:24px;
+}
+#thelistMarkets .marketsIndustry ul #marketsIndustryGG {
+    font-size:10px;
+    font-weight:normal;
+}
+
+#thelistMarkets .marketsIndustry .details1 {
+    border-bottom:1px solid #a5abb2;
+    border-right:1px solid #a5abb2;
+}
+#thelistMarkets .marketsIndustry .details13 {
+    border-bottom:1px solid #a5abb2;
+
+}
+#thelistMarkets .marketsIndustry .details2 {
+    border-right:1px solid #a5abb2;
+}
+#thelistMarkets .marketsIndustry div ul li{
+    height:14px;
+    border-bottom:0;
+    border-top:0;
+    text-align:center;
+}
+#thelistMarkets .marketsList{
+
+    border-bottom:0;
+    border-top:0;
+    text-align:center;
+
+}
+#thelistMarkets .marketsList .details{
+    width:100%;
+    font-weight:700;
+    height:500px;
+	-moz-transition:height 400ms ease-in;-ms-transition:height 400ms ease-in;-o-transition:height 400ms ease-in;-webkit-transition:height 400ms ease-in;transition:height 400ms ease-in;
+	overflow:hidden;
+}
+#thelistMarkets .marketsList .details ul li{
+    width:100%;
+    font-weight:700;
+    height:50px;
+    border-bottom:0;
+    border-top:0;
+}
+#thelistMarkets .marketsList .details ul li div{
+    width:33%;
+    float:left;
+}
+#thelistMarkets .marketsList .details ul li .info{
+    text-align:left;
+    line-height:14px;
+    margin-top:10px;
+    height:40px;
+}
+#thelistMarkets .marketsList .details ul li .name{
+    width:80%;
+    font-weight:normal;
+    font-size:16px;
+	margin-left:16px;
+}
+#thelistMarkets .marketsList .details ul li .code{
+    font-size:10px;
+    color:#5D6065;
+	margin-left:16px;
+}
+#thelistMarkets .marketsList .details ul li .value{
+    font-size:22px;
+    margin-top:6px;
+    height:44px;
+}
+#thelistMarkets .marketsList .details ul li .ZF{
+    font-size:20px;
+    margin-top:10px;
+    height:40px;
+}
+.Red{
+    color:#E50000;
+}
+.Green{
+    color:#20AB36;
+}
+.Black{
+    color:#ABB0B6;
+}
+/*marketsDetails 特有的*/
+#thelistMarkets .mdTitle{
+    color:#ffffff;
+    width:100%;
+    background-color:#207acc;
+    height:33px;
+    font-size:15px;
+    font-weight:bold;
+}
+#thelistMarkets .mdTitle .title1,#thelistMarkets .marketsList .details1 ul li #title1,#thelistMarkets .marketsList #details2 .info{
+    text-align:left;
+    margin-left:0px;
+}
+#thelistMarkets .mdTitle .title1 span,#thelistMarkets .marketsList .details1 ul li #title1 span,#thelistMarkets .marketsList #details2 .info span{
+    margin-left:16px;
+}
+#thelistMarkets .mdTitle .title2,#thelistMarkets .marketsList .details1 ul li #title2,#thelistMarkets .marketsList #details2 .value{
+    text-align:right;
+}
+#thelistMarkets .mdTitle .title2 span,#thelistMarkets .marketsList .details1 ul li #title2 span,#thelistMarkets .marketsList #details2 .value span{
+    margin-right:30px;
+}
+#thelistMarkets .marketsList .details1 ul li #title2 span{
+    font-weight:bold;
+}
+#thelistMarkets .mdTitle .title3,#thelistMarkets .marketsList .details1 ul li #title3,#thelistMarkets .marketsList #details2 .ZF{
+    text-align:left;
+}
+#thelistMarkets .mdTitle .title3 span,#thelistMarkets .marketsList .details1 ul li #title3 span,#thelistMarkets .marketsList #details2 .ZF span{
+    margin-left:20px;
+}
+#thelistMarkets .mdTitle div span .sortCode{
+    margin-right:0px;
+    margin-left:5px;
+}
+#thelistMarkets .mdTitle div{
+    background:transparent;
+    width:33%;
+    float:left;
+    margin-top:5px;
+}
+#thelistMarkets .mdTitle div{
+    background:transparent;
+    width:33%;
+    float:left;
+}
+#thelistMarkets .marketsList .details1{
+    font-size:16px;
+    font-weight:normal;
+}
+#thelistMarkets .marketsList .details1 ul li{
+    margin-top:10px;
+    height:30px;
+}
+#thelistMarkets .marketsList .details1 ul li div{
+    width:33%;
+    float:left;
+}
+#thelistMarkets .marketsList #details2{
+    height: 100%;
+}
+.sortColor{
+    color:#64C1FE;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:context="http://www.springframework.org/schema/context"   
+    xsi:schemaLocation="  
+         http://www.springframework.org/schema/context   
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd    
+     http://www.springframework.org/schema/beans   
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+     http://www.springframework.org/schema/tx   
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+     http://www.springframework.org/schema/aop   
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">  
+	
+	<!-- 使用apache的DBCP连接池  -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- Connection Info -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/s_trade?useCursorFetch=true&amp;useUnicode=true&amp;characterEncoding=utf-8" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+
+		<!-- Connection Pooling DBCP -->
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="100" />
+		<property name="maxIdle" value="30" />
+		<property name="maxWait" value="1000" />
+		<property name="poolPreparedStatements" value="true" />
+		<property name="defaultAutoCommit" value="false" />
+	</bean>
+
+	<!-- 这里的dataSource要与sqlSessionFactory的dataSource一致，否则事务无效 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-configuration.xml"></property>
+	</bean>
+
+	<!-- 注意！这里不要偷懒！。要把userMapper赋给别的.class文件里的一个属性后再使用，否则事务无效。
+	也就是说当直接创建userMapper的一个class，然后使用IUserDao.insertUser方法的话也可以实现，但是事务将无效。 -->
+	<!-- 这里的mapperInterface需要接口类型 -->
+	<bean id="getDataMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="ea.service.res.db.mapper.GetDataMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="exeDataMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="ea.service.res.db.mapper.ExeDataMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 扫描包  -->  
+	<context:component-scan base-package="ea.service.res.db.service" />
+	
+	<!-- 使用注解方式的事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+</beans>

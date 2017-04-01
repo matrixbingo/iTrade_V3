@@ -1,0 +1,65 @@
+测试 ConditionServer数据存储
+
+暂停 -- 继续
+
+
+MiData 代替 M1Data,M5Data
+MiData.getMiKDataByPeriod 代替
+MiData.getM1KData 没有则返回null
+
+1、
+
+
+1、背离失效处理
+2、存储背离角度
+1、加上突破
+2、指标失效直接出场 或 使用移动出场
+3、对不同策使用不同的移动出场
+
+v1 m05
+1、(t2.ang1+t2.ang2+t2.ang3) >= 110 && ang1 >=34 && ang2 >=28  && ang3 >=31
+2、(t2.kdif1+t2.kdif2) > 30 && (t2.kdif1+t2.kdif2+t2.ang1+t2.ang2+t2.ang3) >=158
+3、t2.kdif1/t2.md1>=0.2 and t2.md1/t2.ang3>=0.0122 and t2.md1/t2.ang1 >=0.0118
+v1 m10
+1、(t2.ang1+t2.ang2+t2.ang3) >= 106 && ang1 >=17 && ang2 >=29  && ang3 >=34
+2、(t2.kdif1+t2.kdif2) >=50 && (t2.kdif1+t2.kdif2+t2.ang1+t2.ang2+t2.ang3) >=232
+3、t2.kdif1/t2.md1>=0.1961 and t2.md1/t2.ang3>=0.0143 and t2.md1/t2.ang1 >=0.0167
+
+-- kui
+select t2.del,t2.kdif1,t2.kdif2,t2.ang1,t2.ang2,t2.ang3,t2.md1, t2.md1/t2.ang1 from t_order t1 
+INNER JOIN t_deviate t2 on t1.in_dvt05 = t2.cno and t2.period = 5
+where type = 3 and t1.state !=0 and ( (t1.dir = 1 and t1.ot_price > t1.in_price) or (t1.dir = -1 and t1.ot_price < t1.in_price) ) 
+-- and (t2.ang1 <=50 or t2.ang2 <=50 or t2.ang3 <=50);
+and (t2.ang1+t2.ang2+t2.ang3) >= 168 and t2.ang1 >=43 && t2.ang2 >=42 && t2.ang3 >=48 and (t2.kdif1+t2.kdif2) >=30 and (t2.kdif1+t2.kdif2+t2.ang1+t2.ang2+t2.ang3) >=221
+and t2.kdif1/t2.md1>=0.4 and t2.md1/t2.ang3>=0.0123 and t2.md1/t2.ang1 >=0.0118
+ORDER BY t2.md1/t2.ang1
+-- ying
+select t2.del,t2.kdif1,t2.kdif2,t2.ang1,t2.ang2,t2.ang3,t2.md1,t2.md1/t2.ang1 from t_order t1 
+INNER JOIN t_deviate t2 on t1.in_dvt05 = t2.cno and t2.period = 5
+where type = 3 and t1.state !=0 and ( (t1.dir = 1 and t1.ot_price < t1.in_price) or (t1.dir = -1 and t1.ot_price > t1.in_price) ) 
+and (t2.ang1+t2.ang2+t2.ang3) >= 168 and t2.ang1 >=43 && t2.ang2 >=42 && t2.ang3 >=48 and (t2.kdif1+t2.kdif2) >=30 and (t2.kdif1+t2.kdif2+t2.ang1+t2.ang2+t2.ang3) >=221
+and t2.kdif1/t2.md1>=0.4 and t2.md1/t2.ang3>=0.0123 and t2.md1/t2.ang1 >=0.0118
+ORDER BY t2.md1/t2.ang1
+
+
+
+CREATE TABLE `t_kd` (
+  `period` int(11) NOT NULL,
+  `cno` int(11) NOT NULL,
+  `time` bigint(14) NOT NULL,
+  `k` decimal(10,5) NOT NULL,
+  `d` decimal(10,5) NOT NULL,
+  PRIMARY KEY (`period`,`cno`)
+) 
+
+CREATE TABLE `t_candle_240` (
+  `cno` int(5) NOT NULL,
+  `time` bigint(14) NOT NULL,
+  `open` decimal(10,4) NOT NULL,
+  `close` decimal(10,4) NOT NULL,
+  `high` decimal(10,4) NOT NULL,
+  `low` decimal(10,4) NOT NULL,
+  PRIMARY KEY (`cno`),
+  KEY `t_candle_time` (`time`)
+) 
+

@@ -1,0 +1,40 @@
+.quotationEditTitle{text-align:center;width:100%;font-size:14px;color:#979798;background:#e1dddd;height:34px;line-height:34px;text-align:center;}
+.quotationEditTitle div{text-align:center;float:left;width:30%;height:100%;}
+div.quotationEdit-span1{width:16%!important;}
+div.quotationEdit-span2{width:36%!important;text-align:left;}
+div.quotationEdit-span3{width:16%!important;}
+div.quotationEdit-span4{width:16%!important;}
+div.quotationEdit-span5{width:16%!important;}
+ul.thelistQuotationEdit li{width:100%;padding:0;height:54px;border-bottom:1px solid #b7c3ca;border-top:1px solid #fff;font-size:15px;}
+ul.thelistQuotationEdit li div{text-align:center;float:left;height:100%;}
+ul.thelistQuotationEdit li.selected{position:absolute;background-color:#878787;opacity:0.7;}
+ul.thelistQuotationEdit li div span.char{text-align:left;color:#393e45;padding:10px 0 0 0;display:block;font-size:0;}
+ul.thelistQuotationEdit li div span.char .stock_ico{position:absolute;left:12px;top:13px;display:block;width:15px;height:15px;line-height:15px;font-size:11px;font-style:normal;background:#fe9900;color:#fff;font-family:Tahoma;text-align:center;}
+ul.thelistQuotationEdit li div span.char span{font-weight:700;font-size:16px;}
+ul.thelistQuotationEdit li div span.num{font-size:16px;display:inline-block;text-align:right;line-height:32px;vertical-align:middle;font-weight:bold;top:1px;color:#000000;}
+ul.thelistQuotationEdit li div span.mid{display:block;padding-right:20px;line-height:50px;color:#393e45;font-size:18px;font-weight:700;}
+ul.thelistQuotationEdit li div span.last{width:90px;color:#fff;text-align:center;background-color:#A0A0A0;display:inline-block;position:relative;top:11px;}
+ul.thelistQuotationEdit li div span.up{background-color:#A73502;}
+ul.thelistQuotationEdit li div span.down{background-color:#287312;}
+ul.thelistQuotationEdit li div span em{font-style:normal;color:#7b8a9d;font-size:12px;top:-2px;position:relative;}
+ul.thelistQuotationEdit li div span{position:relative;}
+.quotationEdit{display:block;background-color:#217BCC;height:44px;width:100%;}
+#wrapperQuotationEdit{top:34px;}
+.quotationEditSelect{margin:0 0 0 10px;font-weight:700;}
+.quotationEditDelete{margin:0 10px 0 0;position:absolute;right:0;}
+/*模拟checkbox*/
+.quotationCheckbox{display:inline-block;width:25px;height:25px;border-radius:1px;margin:0 10px 0 0;top:14px;}
+.quotationAll{border:solid 1px #FFFFFF;vertical-align:middle;}
+.checkedAll{background:url(../../images/checkbox2.png) center no-repeat;background-size:25px 25px;}
+.quotationDel{width:21px;height:30px;display:inline-block;vertical-align:middle;margin-right:10px;}
+.quotationDel-bg{background:url(../../images/btn_delete.png) center no-repeat;background-size:21px 30px;color:#8ecaf3;}
+.quotationDel-bg1{background:url(../../images/btn_delete1.png) center no-repeat;background-size:21px 30px;color:#D5E8FB;}
+.quotationDel-color{color:#8ecaf3;}
+.quotationDel-color1{color:#D5E8FB;}
+.quotationItem{border:solid 1px #2480cf;}
+.checkedItem{background:url(../../images/checkbox1.png) center no-repeat;background-size:25px 25px;}
+.quotationRemind{background:url(../../images/remind2.png) center no-repeat;background-size:29px 25px;width:29px;height:25px;display:inline-block;top:14px;}
+.quotationRemind.added{background-image:url(../../images/remind1.png);}
+.quotationTop{background:url(../../images/top.png) center no-repeat;background-size:14px 24px;width:14px;height:24px;display:inline-block;top:14px;}
+.quotationSort{background:url(../../images/sort.png) center no-repeat;background-size:24px 21px;width:24px;height:21px;display:inline-block;top:16px;}
+.movelement{position:relative;background-color:#F4F4F4;}

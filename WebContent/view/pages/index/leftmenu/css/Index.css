@@ -1,0 +1,890 @@
+﻿body {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin: 0px;
+    background-color: rgb(229, 237, 239);
+   
+}
+
+/* Core Code */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    padding: 0;
+    font-size: 12px;
+    line-height: 100%;
+    font-family: Arial, sans-serif;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.DisplayNone {
+    display:none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img { border:none;}
+a { color:#000; text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+#layout {
+    text-align: left;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+#header, #header .headerNav {
+    background: url(../images/header_bg.png) repeat-x;
+}
+
+#header {
+    background-color: #102c4a;
+}
+
+    #header .headerNav {
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: 100% -50px;
+    }
+
+    #header .nav li {
+        float: left;
+        margin-left: -1px;
+        padding: 0 3px;
+        line-height: 11px;
+        background: url(../images/listLine.png) no-repeat;
+    }
+
+        #header .nav li a {
+            color: #b9ccda;
+        }
+
+    #header .nav {
+        display: block;
+        height: 21px;
+        position: absolute;
+        top: 10px;
+        right: 0;
+        z-index: 31;
+        margin-right: 8px;
+    }
+
+#leftside {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 20;
+}
+
+#sidebar {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 20;
+    overflow: hidden;
+}
+
+#sidebar_s {
+    width: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 21;
+}
+
+    #sidebar_s .collapse {
+        height: 430px;
+        cursor: pointer;
+    }
+
+    #sidebar_s .toggleCollapse {
+        border: 0;
+        background: none;
+    }
+
+        #sidebar_s .toggleCollapse div {
+            width: 21px;
+            border: 0;
+            background-position: -2px -147px;
+        }
+
+            #sidebar_s .toggleCollapse div:hover {
+                background-position: -2px -197px;
+            }
+
+    #sidebar_s .collapse {
+        border: solid 1px #b8d0d6;
+        background: #eff5f6;
+    }
+
+        #sidebar_s .collapse:hover {
+            background: #f5f9fa;
+        }
+
+
+
+.toggleCollapse {
+    display: block;
+    overflow: hidden;
+    height: 26px;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    background-repeat: repeat-x;
+}
+
+    .toggleCollapse h2 {
+        float: left;
+        padding-left: 8px;
+        line-height: 26px;
+    }
+
+    .toggleCollapse div {
+        background-image: url(../images/toggleSidebar.png);
+        float: right;
+        display: block;
+        overflow: hidden;
+        width: 25px;
+        height: 25px;
+        text-indent: -100px;
+        background-position: 100% -47px;
+        cursor: pointer;
+    }
+
+        .toggleCollapse div:hover {
+            background-position: 100% -97px;
+        }
+
+#sidebar_s .toggleCollapse {
+    border: 0;
+    background: none;
+}
+
+    #sidebar_s .toggleCollapse div {
+        width: 21px;
+        border: 0;
+        background-position: -2px -147px;
+    }
+
+        #sidebar_s .toggleCollapse div:hover {
+            background-position: -2px -197px;
+        }
+
+
+#sidebar {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 20;
+    overflow: hidden;
+    border: 1px solid #b8d0d6;
+}
+
+
+#sidebar_s .collapse {
+    height: 430px;
+    cursor: pointer;
+}
+
+#sidebar_s .toggleCollapse {
+    border: 0;
+    background: none;
+}
+
+    #sidebar_s .toggleCollapse div {
+        width: 21px;
+        border: 0;
+        background-position: -2px -147px;
+    }
+
+        #sidebar_s .toggleCollapse div:hover {
+            background-position: -2px -197px;
+        }
+
+.toggleCollapse, .toggleCollapse div {
+    background: url(../images/toggleSidebar.png) no-repeat;
+}
+
+.toggleCollapse {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #b8d0d6;
+    background-color: #e7eff0;
+}
+
+
+
+.toggleCollapse {
+    display: block;
+    overflow: hidden;
+    height: 26px;
+    /*border-style: solid;
+    border-width: 1px 1px 0 1px;*/
+    background-repeat: repeat-x;
+}
+
+    .toggleCollapse h2 {
+        float: left;
+        padding-left: 8px;
+        line-height: 26px;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .toggleCollapse h2 {
+        color: #183152;
+        padding-left: 8px;
+    }
+
+    .toggleCollapse div {
+        float: right;
+        display: block;
+        overflow: hidden;
+        width: 25px;
+        height: 25px;
+        text-indent: -100px;
+        background-position: 100% -47px;
+        cursor: pointer;
+    }
+
+        .toggleCollapse div:hover {
+            background-position: 100% -97px;
+        }
+
+
+/* Accordion */
+.accordion .accordionHeader, .accordion .accordionHeader h2, .accordion .accordionHeader h2 span {
+    color: #183152;
+    background: url(../images/accordion.png);
+}
+
+.accordion {
+    border-color: #b8d0d6;
+    background: #FFF;
+}
+
+    .accordion .accordionHeader {
+        background-color: #eaf4ff;
+    }
+
+    .accordion .accordionContent {
+        border-color: #b8d0d6;
+    }
+
+/* Accordion */
+.accordion {
+    margin: 0;
+}
+
+.DisplayNone {
+    display: none;
+}
+
+.accordion .accordionHeader {
+    display: block;
+    overflow: hidden;
+    background-repeat: repeat-x;
+    cursor: pointer;
+}
+
+    .accordion .accordionHeader h2 {
+        display: block;
+        overflow: hidden;
+        padding: 0 25px 0 5px;
+        height: 25px;
+        line-height: 24px;
+    }
+
+        .accordion .accordionHeader h2 span {
+            float: left;
+            display: block;
+            overflow: hidden;
+            text-indent: -1000px;
+            width: 20px;
+            height: 25px;
+        }
+
+.accordion .accordionContent {
+    display: block;
+    overflow: auto;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+
+.accordion .accordionHeader h2 span {
+    background-position: 0 -150px;
+}
+
+
+.tree .folder_collapsable, .tree .folder_expandable, .tree .file {
+    background: url(../images/folder.png) no-repeat;
+}
+
+.tree .checked, .tree .unchecked, .tree .indeterminate {
+    background: url(../images/check.png) no-repeat;
+}
+
+.tree ul {
+    background: #FFF;
+}
+
+.tree li a, .tree li span {
+    color: #183152;
+}
+
+.tree .hover {
+    background: #f5f5f5;
+}
+
+.tree .selected {
+    background-color: #e8edf3;
+}
+
+/* Tree */
+.tree li {
+    clear: both;
+    display: block;
+    line-height: 22px;
+    cursor: pointer;
+    padding: 2px 0px 2px 0px;
+}
+
+.tree div, .tree a, .tree span {
+    display: inherit;
+    height: 22px;
+    line-height: 22px;
+}
+
+.tree div {
+    display: block;
+    overflow: hidden;
+}
+
+    .tree div div {
+        float: left;
+        display: block;
+        overflow: hidden;
+        width: 22px;
+        height: 22px;
+        border: none;
+        background-position: 0 -100px;
+    }
+
+.tree a, .tree a:hover {
+    text-decoration: none;
+}
+/*.tree li:hover {
+    background-color:#eeeeee;
+}*/
+.tree .file {
+    background-position: 0 -100px;
+}
+
+#container {
+    border: solid 1px #b8d0d6;
+    position: absolute;
+    top: 55px;
+    left: 212px;
+    background-color: white;
+}
+
+
+/* TabsPage */
+.tabsPage .tabsPageHeader, .tabsPage .tabsPageHeader li, .tabsPage .tabsPageHeader li a, .tabsPage .tabsPageHeader li span {
+    background: url(../images/tabspage.png) no-repeat;
+}
+
+.tabsPage .tabsPageHeader {
+    background-color: #e9f0f2;
+}
+
+.tabsPage .tabsPageHeader {
+    border-color: #b8d0d6;
+}
+
+    .tabsPage .tabsPageHeader li a {
+        color: #183152;
+    }
+
+    .tabsPage .tabsPageHeader li .close,
+    .tabsPage .tabsPageHeader li.hover .close,
+    .tabsPage .tabsPageHeader li.selected .close {
+        background: url(../images/tabspage_icon.png) no-repeat;
+    }
+
+.tabsPage .tabsLeft, .tabsPage .tabsRight, .tabsPage .tabsMore {
+    background: url(../images/tabscontrol.png) no-repeat;
+}
+
+.tabsPage .tabsMoreList {
+    border-color: #b8d0d6;
+    background: #FFF;
+}
+
+.tabsPage .tabsPageHeader .home_icon {
+    background: url(../images/icon.png) no-repeat;
+}
+
+.tabsPage .tabsPageContent {
+    border-color: #b8d0d6;
+    background: #FFF;
+}
+
+.tabsPage .tabsPageHeader {
+    display: block;
+    height: 27px;
+    border-style: solid;
+    border-width: 0px 0px 0 0px;
+    background-position: 0 -450px;
+    background-repeat: repeat-x;
+    position: relative;
+}
+
+.tabsPage .tabsPageHeaderContent {
+    display: block;
+    overflow: hidden;
+    height: 27px;
+    margin-right: 19px;
+    position: relative;
+}
+
+.tabsPage .tabsPageHeaderMargin {
+    margin: 0 34px 0 17px;
+}
+
+.tabsPage .tabsPageHeader ul {
+    display: block;
+    width: 10000px;
+    height: 26px;
+    z-index: 1;
+    position: absolute;
+}
+
+.tabsPage .tabsPageHeader li {
+    float: left;
+    display: block;
+    height: 26px;
+    margin-left: 2px;
+    background-position: 0 -100px;
+    background-repeat: repeat-x;
+    position: relative;
+    cursor: pointer;
+}
+
+    .tabsPage .tabsPageHeader li a {
+        float: left;
+        display: block;
+        overflow: hidden;
+        height: 26px;
+        padding-left: 5px;
+        line-height: 25px;
+        background-position: 0 0;
+    }
+
+        .tabsPage .tabsPageHeader li a:hover {
+            text-decoration: none;
+        }
+
+    .tabsPage .tabsPageHeader li span {
+        float: left;
+        display: block;
+        overflow: hidden;
+        width: 92px;
+        height: 24px;
+        padding: 2px 20px 0 3px;
+        line-height: 21px;
+        background-position: 100% -50px;
+        cursor: pointer;
+    }
+
+    .tabsPage .tabsPageHeader li.hover {
+        background-position: 0 -250px;
+        background-repeat: repeat-x;
+    }
+
+        .tabsPage .tabsPageHeader li.hover a {
+            background-position: 0 -150px;
+        }
+
+        .tabsPage .tabsPageHeader li.hover span {
+            background-position: 100% -200px;
+        }
+
+    .tabsPage .tabsPageHeader li.selected {
+        background-position: 0 -400px;
+        background-repeat: repeat-x;
+    }
+
+        .tabsPage .tabsPageHeader li.selected a {
+            font-weight: bold;
+            background-position: 0 -300px;
+        }
+
+        .tabsPage .tabsPageHeader li.selected span {
+            background-position: 100% -350px;
+        }
+
+    .tabsPage .tabsPageHeader li .close {
+        display: block;
+        overflow: hidden;
+        width: 11px;
+        height: 11px;
+        padding: 0;
+        text-indent: -1000px;
+        position: absolute;
+        top: 3px;
+        right: 2px;
+    }
+
+        .tabsPage .tabsPageHeader li .close:hover {
+            background-position: 0 -50px;
+        }
+
+    .tabsPage .tabsPageHeader li.main span {
+        padding: 2px 8px 0 3px;
+    }
+
+    .tabsPage .tabsPageHeader li .home_icon,
+    .tabsPage .tabsPageHeader li.main .home_icon {
+        width: auto;
+        padding: 0 0 0 15px;
+        background-position: 0 3px;
+    }
+
+.page {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 21px;
+    padding: 0 5px;
+    z-index: -1;
+}
+
+.progressBar {
+    border: solid 2px #86a5ad;
+    background: #FFF url(../images/progressBar/progressBar_m.gif) no-repeat 10px 10px;
+}
+
+.progressBar {
+    display: block;
+    width: 148px;
+    height: 28px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -74px;
+    margin-top: -14px;
+    padding: 10px 10px 10px 50px;
+    text-align: left;
+    line-height: 27px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2001;
+}
+
+.background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+/* Pages default */
+.pageHeader{ border-bottom:solid #b8d0d6 1px;  background:#ebf0f5 url(../images/pageHeader_bg.png) repeat-x;}
+
+/* Pages default */
+.page { display:block; overflow:hidden;float:left; width:100%;}
+.pageHeader { display:block; overflow:auto; margin-bottom:1px; padding:5px; border-style:solid; border-width:0 0 1px 0; position:relative;}
+.searchBar {}
+.searchBar ul.searchContent { display:block; overflow:hidden; height:25px;}
+.searchBar ul.searchContent li { float:left; display:block; overflow:hidden; width:300px; height:21px; padding:2px 0;}
+.searchBar label { float:left; width:80px; padding:0 5px; line-height:23px;}
+.searchBar .searchContent td{padding-right:20px; white-space:nowrap; height:25px}
+.searchBar .subBar { height:25px;}
+.searchBar .subBar ul { float:right;}
+.searchBar .subBar li { float:left; margin-left:5px;}
+.pageContent { display:block;overflow:auto;position:relative;}
+
+/* Grid */
+.panelBar,
+.toolBar li:hover, .toolBar li:hover a, .toolBar li:hover span, .toolBar span,
+.pagination, .pagination li.hover, .pagination li.hover a, .pagination li span,
+.pagination li.disabled span span,
+.panelBar .line, .pagination li.jumpto, .pagination li.jumpto .goto { background:url(../images/grid.png) no-repeat;}
+
+.panelBar { border-color:#b8d0d6; background-color:#efefef;}
+
+.panel .grid { border-style:solid; border-width:0 1px;}
+.panel .panelBar { border-width:1px;}
+
+.panelBar { display:block; overflow:hidden; height:25px; border-style:solid; border-width:1px 0; background-repeat:repeat-x; }
+
+.panelBar ul { padding:1px;}
+.panelBar li { float:left; display:block; overflow:hidden; height:23px; padding:0 0 0 5px;}
+.panelBar li:hover { background-position:0 -100px;}
+.panelBar li:hover a { background-position:100% -150px;}
+
+.panelBar .toolBar li, .panelBar .toolBar li:hover { padding:0 0 0 5px; background-position:0 -100px;}
+.panelBar .toolBar a, .panelBar .toolBar li:hover a { float:left; display:block; overflow:hidden; padding:0 5px 0 0; text-decoration:none; background-position:100% -150px;}
+.panelBar .toolBar span, .panelBar .toolBar li:hover span { float:left; display:block; overflow:hidden; height:23px; padding:0 0 0 20px; line-height:23px; cursor:pointer;}
+
+.panelBar .toolBar a.add span { background-position:0 -696px;}
+.panelBar .toolBar a.delete span { background-position:0 -746px;}
+.panelBar .toolBar a.edit span { background-position:0 -796px;}
+.panelBar .toolBar a.icon span { background-position:0 -846px;}
+
+.panelBar .toolBar li.line { display:block; overflow:hidden; width:12px; padding:0; text-indent:-1000px; background-position:5px -200px;}
+
+.panelBar .pages { float:left; overflow:hidden; height:21px; padding:2px 5px;}
+.panelBar .pages span { float:left; line-height:21px;}
+.panelBar .pages select { float:left; margin:0 3px; font-size:12px;}
+
+
+.grid .gridHeade{ background-position:0 -199px;}
+
+
+.pagination { float:right; padding-left:7px; background-position:0 -199px;}
+.pagination li, .pagination li.hover { padding:0 0 0 5px; background-position:0 -100px;}
+.pagination a, .pagination li.hover a, .pagination li span { float:left; display:block; padding:0 5px 0 0; text-decoration:none; line-height:23px; background-position:100% -150px;}
+.pagination li.selected a{color:red; font-weight:bold;}
+.pagination span, .pagination li.hover span { float:left; display:block; height:23px; line-height:23px; cursor:pointer;}
+
+.pagination li .first span, .panelBar li .previous span { padding:0 0 0 10px;}
+.pagination li .next span, .panelBar li .last span { padding:0 10px 0 0;}
+.pagination li .first span { background-position:0 -244px;}
+.pagination li .previous span { background-position:0 -294px;}
+.pagination li .next span { background-position:100% -344px;}
+.pagination li .last span { background-position:100% -394px;}
+.pagination li .last { margin-right:5px;}
+
+.pagination li.disabled { background:none;}
+.pagination li.disabled span, .grid .pagination li.disabled a { background-position:0 100px; cursor:default;}
+.pagination li.disabled span span { color:#666;}
+.pagination li.disabled .first span { background-position:0 -444px;}
+.pagination li.disabled .previous span { background-position:0 -494px;}
+.pagination li.disabled .next span { background-position:100% -544px;}
+.pagination li.disabled .last span { background-position:100% -594px;}
+.pagination li.disabled .last { margin-right:5px;}
+
+.pagination li.jumpto { padding:2px 2px 0 7px; background-position:0 -200px;}
+.pagination li.jumpto .textInput { float:left; width:30px; padding:1px; border-color:#acaeaf;}
+.pagination li.jumpto .goto { float:left; display:block; overflow:hidden; width:16px; height:19px; border:0; text-indent:-1000px; background-position:0 -650px; cursor:pointer;}
+
+
+.grid .gridHeader { background:#EEE;}
+.grid { background:#FFF;}
+.grid table { border-color:#d0d0d0;}
+.grid .gridHeader, .grid .gridHeader th { border-color:#d0d0d0; background:#f0eff0 url(../images/tableth.png) repeat-x;}
+.grid table th div { border-left-color:#EEE; border-right-color:#d0d0d0;}
+.grid table td { border-color:#ededed;}
+
+.grid .resizeMarker, .grid .resizeProxy { background:url(../images/resizeCol.png) repeat-y;}
+
+.grid .gridHeader th.hover, .grid .gridHeader th.thSelected { border-color:#aaccf6; }
+.grid .gridTbody .gridRowBg { background:#f7f7f7;}
+.grid .gridTbody .gridRow { border-color:#ededed;}
+.grid .gridTbody .gridRow td.tdLast { border-color:#ededed;}
+.grid .gridTbody .hover { border-color:#dddddd; background:#f5f5f5;}
+.grid .gridTbody .hover .tdSelected { background:#f5f5f5;}
+.grid .gridTbody .selected { border-color:#b8d0d6; background:#7cc5e5;}
+.grid .gridTbody .selected .tdSelected { background:#e8edf3;}
+.grid .gridTbody .tdSelected { background:#f8f8f8;}
+.grid .error{background:#fb7e81;}
+
+
+.grid { display:block; overflow:hidden; width:100%; border-width:0 1px; position:relative;}
+.grid .gridHeader { display:block; overflow:hidden; width:auto;}
+.grid .gridThead { }
+
+.grid .gridScroller { display:block; overflow:auto; position:relative;}
+.grid .gridTbody { }
+
+.grid table { border:0; border-collapse:collapse;table-layout:fixed;}
+.grid .gridHeader th { padding:0 3px; border-style:solid; border-width:0 1px 1px 0; vertical-align:top; white-space:nowrap; line-height:21px; cursor:default;}
+.grid .gridHeader th:hover, .grid .gridHeader th.thSelected { background-position:0 -50px;}
+.grid .gridTbody td { border-right:solid 1px #ededed; overflow:hidden; padding:0 3px; border-bottom:solid 1px #ededed; vertical-align:middle; line-height:21px;}
+.grid .gridTbody td div { display:block; overflow:hidden; height:21px; white-space:nowrap; line-height:21px;}
+.grid .gridTbody td div span{ display:block; overflow:hidden; height:21px; white-space:nowrap; line-height:21px;}
+.grid .gridTbody td div a{line-height:21px;}
+
+.grid .gridRow { border-style:solid; border-width:0 0 1px 0; cursor:default;}
+.grid .gridRow td.tdLast { padding:0 4px 0 5px; border-right:solid 1px;}
+.grid .gridCol { width:100%; display:block; overflow:hidden; height:21px; line-height:21px; white-space:nowrap;}
+
+
+.grid .gridTbody .selected td { border-bottom-style:dotted; border-bottom-width:1px;}
+.grid .gridTbody .selected .tdSelected {}
+.grid .gridTbody .tdSelected { }
+
+.grid .resizeMarker, .grid .resizeProxy { display:block; overflow:hidden; width:1px; position:absolute;}
+
+.grid .left { text-align:left;}
+.grid .right { text-align:right;}
+.grid .center { text-align:center;}
+
+
+
+
+/* ----------------------------------------------------------------- Form */
+/* TextInput */
+.textInput, input.focus, input.required, input.error, input.readonly, input.disabled,
+textarea.focus, textarea.required, textarea.error, textarea.readonly, textarea.disabled { background:url(../images/input_bg.png) no-repeat scroll;}
+
+.textInput, .textArea { border-color:#a2bac0 #b8d0d6 #b8d0d6 #a2bac0; background-color:#FFF;}
+input.required, textarea.required { border-color:#a2bac0 #b8d0d6 #b8d0d6 #a2bac0; background-color:#FFF;}
+input.error, textarea.error { border-color:#F80C11 #FB7E81 #FB7E81 #F80C11;}
+input.focus, textarea.focus { border-color:#64aabc #a9d7e3 #a9d7e3 #64aabc; background-color:#f8fafc;}
+input.readonly, textarea.readonly { border-color:#9eabb3 #d5dbdf #d5dbdf #9eabb3; background-color:#F6F6F6;}
+input.disabled, textarea.disabled { border-color:#9eabb3 #d5dbdf #d5dbdf #9eabb3; background-color:#F6F6F6;}
+
+.inputButton, .inputDateButton { background:url(./images/form/input_bt.png) no-repeat;}
+
+/* Button */
+.button, .button span,
+.buttonDisabled, .buttonDisabled span,
+.buttonActive, .buttonActive span,
+.button .buttonContent, .buttonHover, .buttonHover .buttonContent,
+.buttonActive .buttonContent, .buttonActiveHover, .buttonActiveHover .buttonContent,
+.buttonDisabled .buttonContent { background:url(../images/button_s.png) no-repeat;}
+
+.button span, .buttonDisabled span, .buttonActive span,
+.button .buttonContent, .buttonHover, .buttonHover .buttonContent,
+.buttonActive .buttonContent, .buttonDisabled .buttonContent,
+.button button, .buttonHover button,
+.buttonActive button, .buttonDisabled button { color:#183152;}
+
+.buttonDisabled span, .buttonDisabled:hover span,
+.buttonDisabled button { color:#999;}
+
+/* Button */
+.button, .buttonActive, .buttonDisabled { float:left; display:block; overflow:hidden; height:25px; padding-left:5px;}
+
+.button span, .buttonDisabled span, .buttonActive span,
+.button .buttonContent, .buttonHover, .buttonHover .buttonContent,
+.buttonActive .buttonContent, .buttonDisabled .buttonContent { float:left; display:block; overflow:hidden; height:25px; line-height:25px; font-weight:bold;}
+
+.button { background-position:0 0;}
+.button .buttonContent { padding:0 5px 0 0; background-position:100% -50px;}
+.button span { padding:0 10px 0 5px; background-position:100% -50px; cursor:pointer;}
+.button:hover { text-decoration:none; background-position:0 -100px;}
+.button:hover span { background-position:100% -150px;}
+.buttonHover { padding-left:5px; background-position:0 -100px;}
+.buttonHover .buttonContent { padding:0 5px 0 0; background-position:100% -150px;}
+
+.buttonActive { background-position:0 -200px;}
+.buttonActive .buttonContent { padding:0 5px 0 0; background-position:100% -250px;}
+.buttonActive span { padding:0 10px 0 5px; background-position:100% -250px; cursor:pointer;}
+.buttonActive:hover { text-decoration:none; background-position:0 -300px;}
+.buttonActive:hover span { background-position:100% -350px;}
+.buttonActiveHover { background-position:0 -300px;}
+.buttonActiveHover .buttonContent { padding:0 5px 0 0; background-position:100% -350px;}
+
+.buttonDisabled, .buttonDisabled:hover { text-decoration:none; background-position:0 -400px;}
+.buttonDisabled span, .buttonDisabled:hover span { padding:0 10px 0 5px; background-position:100% -450px; cursor:default;}
+.buttonDisabled .buttonContent { padding:0 5px 0 0; background-position:100% -450px;}
+
+.button button, .buttonHover button,
+.buttonActive button, .buttonDisabled button { width:auto; height:25px; margin:0; padding:0 0 5px 0; border:0; font-size:12px; font-weight:bold; background:none; cursor:pointer;}
+.buttonDisabled button { cursor:default;}
+
+/* button */
+a.btnAdd, a.btnDel, a.btnView, a.btnEdit, a.btnSelect, a.btnInfo, a.btnAssign, a.btnLook, a.btnAttach{background:url(../images/imgX.gif) no-repeat; display:block; width:22px; height:20px; text-indent:-1000px; overflow:hidden; float:left; margin-right: 3px}
+a.btnAdd{background-position:0 0}
+a.btnDel{background-position: -23px 0}
+a.btnInfo{background-position: -46px 0}
+a.btnAssign{background-position: -69px 0}
+a.btnView{background-position: -115px 0}
+a.btnEdit{background-position: -138px 0}
+a.btnSelect{background-position: -92px 0}
+a.btnLook{background-position: -161px 0}
+a.btnAttach{background-position: -183px 0}
+.center a.btnAdd, .center a.btnDel, .center a.btnView, .center a.btnEdit, .center a.btnSelect, .center a.btnInfo, 
+.center a.btnAssign, .center a.btnLook, .center a.btnAttach {display:inline-block;float:none}
+.right a.btnAdd, .right a.btnDel, .right a.btnView, .right a.btnEdit, .right a.btnSelect, .right a.btnInfo, 
+.right a.btnAssign, .right a.btnLook, .right a.btnAttach {display:inline-block;float:none;text-indent:1000px}
+
+
+/* TextInput */
+.textInput, input.focus, input.required, input.error, input.readonly, input.disabled,
+textarea.focus, textarea.required, textarea.error, textarea.readonly, textarea.disabled { padding:2px; margin:0; line-height:15px; font-size:12px; border-style:solid; border-width:1px;}
+input.required, textarea.required { background-position:100% 0;}
+input.gray, textarea.gray{color:gray;}
+select { border:1px solid; border-color: #A2BAC0 #B8D0D6 #B8D0D6 #A2BAC0}
+
+
+/* Homepage */
+.sidebarContent { display:block; overflow:auto; height:500px; border:solid 1px #86B4EC; background:#FFF;}
+.accountInfo { display:block; overflow:hidden; height:60px;vertical-align:middle; line-height:60px; padding:0 10px; background:url(../images/account_info_bg.png) repeat-x}
+.accountInfo p { padding:8px 0 0 0; line-height:19px; }
+.accountInfo p span { font-size:14px; font-weight:bold;}
+.accountInfo .right { float:right; padding-right:10px; text-align:right;}
+.accountInfo .alertInfo { float:right; width:300px; height:60px; padding-left:10px; border-left:solid 1px #accdf4;}
+.accountInfo .alertInfo h2 { padding:8px 0; line-height:17px; }
+.accountInfo .alertInfo a { padding:6px 0 0 0; line-height:21px;}
+
+/* Pages dialog */
+.dialog .pageHeader, .dialog .pageContent { border-color:#b8d0d6;}
+.dialog .pageContent .pageFormContent { border-color:#b8d0d6; background:#FFF;}
+
+/* Pages Form */
+.pageForm { display:block; overflow:auto;}
+.pageFormContent { display:block; overflow:auto; padding:10px 5px; position:relative;}
+.pageFormContent div.unit {display:block; margin:0; padding:5px 0; position:relative;clear:both; line-height: 20px;}
+.pageFormContent p { float:left; display:block; width:380px; height:21px; margin:0; padding:5px 0; position:relative;}
+.pageFormContent p.nowrap { height:auto; width: 100%}
+.pageFormContent .radioGroup { float:left; display:block; overflow:hidden;}
+.pageFormContent label { float:left; width:120px; padding:0 5px; line-height:21px;}
+.pageFormContent label.radioButton { float:left; width:auto; padding:0 10px 0 0; line-height:21px;}
+.pageFormContent .textInput { float:left;}
+.pageFormContent select { float:left;}
+.pageFormContent .inputInfo { padding:0 5px; line-height:21px;}
+.pageFormContent span.unit, .pageFormContent a.unit { padding:0 5px; line-height:21px;}
+.pageFormContent span.info{color:#7F7F7F;display:block;line-height:21px;float:left;}
+.pageFormContent H2 {color:darkblue;}
+
+
+.pageFormContent dl { float:left; display:block; width:380px; height:21px; margin:0; padding:5px 0; position:relative;}
+.pageFormContent dt { float:left; width:120px; padding:0 5px; line-height:21px;}
+.pageFormContent dd {display:block;line-height:21px;width:220px;float:left;}
+.pageFormContent dl.nowrap, .nowrap dl{width:100%; height:auto; clear: both;}
+.pageFormContent dl.nowrap dd, .nowrap dd {width: 560px;}
+
+.formBar { border-color:#b8d0d6; background:#ebf0f5 url(../images/pageHeader_bg.png) repeat-x;}
+
+/* Pages Form */
+.formBar { border-color:#b8d0d6;}
+.divider { border-color:#b8d0d6;}
+
+.formBar { clear:both; padding:0 5px; height:30px; padding-top:5px; border-style:solid; border-width:1px 0 0 0;}
+.formBar ul { float:right;}
+.formBar li { float:left; margin-left:5px;}
+
+.divider { clear:both; display:block; overflow:hidden; text-indent:-1000px; width:auto; height:1px; padding:4px 0 0 0; margin-bottom:5px; border-style:dotted; border-width:0 0 1px 0;}

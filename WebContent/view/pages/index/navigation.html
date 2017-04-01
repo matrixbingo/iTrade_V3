@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+    <meta name = "format-detection" content = "telephone=no">
+    <meta charset=utf-8>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/pztg.v2.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/quotationChart.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/quotation.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/quotationEdit.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/quotationQuery.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/markets.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/register.css" />
+    <link rel="stylesheet" type="text/css"  href="../../themes/normal/page-diagnosis.css" />
+    <script src="../../lib/jquery-1.9.1.min.js"></script>
+    <script src="../../lib/jquery.transit.min.js"></script>
+    <script src="../../lib/google.fastbutton.js"></script>
+    <script type="text/javascript" src="../../lib/jquery.google.fastbutton.js"></script>
+    <script type="text/javascript" src="../../cordova.js"></script>
+    <script type="text/javascript"  src="../../js/plugin/storage.js"></script>
+    <script type="text/javascript"  src="../../js/plugin/update.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationUtils.js"></script>
+    <script type="text/javascript" src="../../js/utils/utils.js"></script>
+    <script type="text/javascript" src="../../js/jquery.header.js"></script>
+    <script type="text/javascript" src="../../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../../js/jquery.iscrollAssistant.js"></script>
+    <script type="text/javascript" src="../../js/utils/md5.js"></script>
+    <!--首页面js-->
+    <script type="text/javascript" src="../../js/news/cPlateNewsPageFun.js"></script>
+    <script type="text/javascript"  src="../../js/news/newsSubscribe_private.js"></script>
+    <script type="text/javascript" src="../../js/news/characteristicPlate_private.js"></script>
+    <script type="text/javascript" src="../../js/setUp/setUpAndLoad_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.touchEvent.js"></script>
+    <script type="text/javascript"  src="../../js/news/realTimeObservationPage.js"></script>
+    <script type="text/javascript"  src="../../js/index/navigation_private.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <!--次级页面js-->
+    <script type="text/javascript"  src="../../js/news/newsDetailsPage.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationQuery.js"></script>
+    <script type="text/javascript" src="../../js/register/register_private.js"></script>
+    <script type="text/javascript" src="../../js/register/forgetPassword_private.js"></script>
+    <script type="text/javascript" src="../../js/feedback/feedback_private.js"></script>
+    <script type="text/javascript" src="../../js/feedback/operateAdvice_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsDetails.js"></script>
+    <script type="text/javascript" src="../../js/quotation/diagnosisShares_private.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股详细start -->
+    <script type="text/javascript" src="../../js/quotation/quotationChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.timeChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.kLineChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股编辑start -->
+    <script type="text/javascript" src="../../js/quotation/quotationEdit.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.draggable.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="ajax-pushlet-client.js"></script>
+    <script type="text/javascript">
+//        document.addEventListener('deviceready',function(){
+//            if(typeof(device) != "undefined"){
+//                platform = device.platform.toLowerCase();
+//                platformVersion = device.version;
+//                uuid = device.uuid;
+//                dom_init();
+//            }else{
+//                if(window.plugins){
+//                    window.plugins.device.getInfo(function(info) {
+//                        platform = info.platform.toLowerCase();
+//                        platformVersion = info.version;
+//                        uuid = info.uuid;
+//                        dom_init();
+//                    });
+//                }
+//            }
+//        },false);
+
+        $(document).ready(function(){
+           // dom_init();
+
+            PL._init();
+            PL.joinListen('/cuige/he');
+            function onData(event) {
+                alert(event.get("mess"));
+                // 离开
+                // PL.leave();
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="gw-mobile-content" class="pageFrame">
+    <div id = "gw-mobile-main-content" class="mainPage pt-page">
+        <div id="gw-mobile-main-cPlate" class="pageBox"></div>
+        <div id="gw-mobile-main-stock" class="pageBox"></div>
+        <div id="gw-mobile-main-market" class="pageBox"></div>
+        <div id="gw-mobile-main-setUp" class="pageBox" ></div>
+        <div class="ui-gw-bottomHeader">
+            <table width="100"><tr>
+                <td><div class="ui-gw-bottomHeader-column selected" id="bottomCharacteristicPlate"><b>特供</b><span>News</span></div></td>
+                <td><div class="ui-gw-bottomHeader-column" id="bottomSelfSockets"><b>自选</b><span>Portfolio</span></div></td>
+                <td><div class="ui-gw-bottomHeader-column" id="bottomMarkets"><b>行情</b><span>Markets</span></div></td>
+                <td><div class="ui-gw-bottomHeader-column" id="bottomSetUp"><b>设置</b><span>Settings</span></div></td>
+            </tr></table>
+            <div class="ui-gw-bottomHeader-select"></div>
+        </div>
+    </div>
+    <!--<div id="gw-mobile-vice-common" class="subPage pageBox pt-page">-->
+    <!--</div>-->
+    <!--<div id="gw-mobile-vice-stock" class="subPage pageBox pt-page">-->
+    <!--</div>-->
+    <!--<div id="pageCovered" class="pageCoverLayer"></div>-->
+</div>
+</body>
+</html>

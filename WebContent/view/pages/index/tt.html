@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Text</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            arrow("myCanvas");
+        }
+        function arrow(id)
+        {
+            sta = new Array(10,100);
+            end = new Array(50,200);
+
+            var canvas = document.getElementById(id);
+            if(canvas == null)return false;
+            var ctx = canvas.getContext('2d');
+            //画线
+            ctx.beginPath();
+            ctx.translate(0,300); //坐标源点
+            ctx.moveTo(sta[0],-sta[1]);
+            ctx.lineTo(end[0],-end[1]);
+            //ctx.fillText("x1",sta[0],-sta[1]);
+            //ctx.fillText("x2",end[0],-end[1]);
+            ctx.fill();
+            ctx.stroke();
+            ctx.save();
+            //画箭头
+            ctx.translate(end[0],-end[1]);
+            (end[1]-sta[1] >= 0) ?
+                    ctx.rotate(Math.atan((end[0]-sta[0])/(end[1]-sta[1]))) :
+                    ctx.rotate(Math.PI+Math.atan((end[0]-sta[0])/(end[1]-sta[1]))); //旋转弧度
+            ctx.lineTo(-5,10);
+            ctx.lineTo(0,5);
+            ctx.lineTo(5,10);
+            ctx.lineTo(0,0);
+            ctx.fill();
+            ctx.restore();
+            ctx.closePath();
+        }
+    </script>
+    <style type="text/css">
+        canvas{border:#ccc solid 1px;}
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="300"></canvas>
+</body>
+</html>  

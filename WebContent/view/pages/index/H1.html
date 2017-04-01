@@ -1,0 +1,256 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset=utf-8>
+    <title>EA</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/pztg.v2.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotationChart.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotation.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotationEdit.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotationQuery.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/markets.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/register.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/page-diagnosis.css"/>
+
+    <!--新增 -->
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/demo.css"/>
+
+    <!-- 日期控件 -->
+    <script type="text/javascript" src="../../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery.transit.min.js"></script>
+    <script type="text/javascript" src="../../lib/google.fastbutton.js"></script>
+
+    <script type="text/javascript" src="../../js/quotation/quotationUtils.js"></script>
+    <script type="text/javascript" src="../../js/utils/utils.js"></script>
+    <script type="text/javascript" src="../../js/jquery.header.js"></script>
+    <script type="text/javascript" src="../../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../../js/jquery.iscrollAssistant.js"></script>
+    <script type="text/javascript" src="../../js/utils/md5.js"></script>
+    <!--首页面js-->
+    <script type="text/javascript" src="../../js/news/cPlateNewsPageFun.js"></script>
+    <script type="text/javascript" src="../../js/news/newsSubscribe_private.js"></script>
+    <script type="text/javascript" src="../../js/news/characteristicPlate_private.js"></script>
+    <script type="text/javascript" src="../../js/setUp/setUpAndLoad_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.touchEvent.js"></script>
+    <script type="text/javascript" src="../../js/news/realTimeObservationPage.js"></script>
+    <script type="text/javascript" src="../../js/index/navigation_private.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <!--次级页面js-->
+
+    <!-- 自选股详细start -->
+    <script type="text/javascript" src="../../js/quotation/quotationChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.timeChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.kLineChart_Minute.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股编辑start -->
+
+    <script type="text/javascript" src="index_minute.js"></script>
+
+    <style type="text/css" media="all">
+        div#menuDiv {height:auto;width:55%;float:left;}
+        div#contentDiv {height:auto;width:44%;float:left;}
+        /*div#rightDiv {height:auto;width:20%;float:right;}*/
+        input[type="text"]{
+            border: 1px solid; border-color: #CCC #EEE #EEE #CCC;
+            background: #e5f3fc;
+        }
+        input[type="button"]{
+            border: 1px solid; border-color: #EEE #CCC #CCC #EEE;
+            color: #000; font-weight: bold; background: #e5f3fc;
+        }
+    </style>
+    <script type="text/javascript">
+        var period = 60;
+        var binTime = '20120105182000';
+        var str = binTime.substring(0, 4) + '-' + binTime.substring(4, 6) + '-' + binTime.substring(6, 8) + ' ' + binTime.substring(8, 10) + ':' + binTime.substring(10, 12);
+        var d = new Date(str);
+
+        $(document).ready(function () {
+
+            loadStart();
+        });
+
+        function startChart(){
+            clearAllCahe();
+            binTime = $('#binTime').val();
+            creat_k_chart(binTime, period);
+        }
+
+        //table 样式
+        function initTable() {
+            /* For zebra striping */
+            $("table tr:nth-child(odd)").addClass("odd-row");
+            /* For cell text alignment */
+            $("table td:first-child, table th:first-child").addClass("first");
+            /* For removing the last border */
+            $("table td:last-child, table th:last-child").addClass("last");
+        }
+
+        //无用
+        function clickButton() {
+            d.setMinutes(d.getMinutes() + 1);//加一个月，同理，可以加一天：getDate()+1，加一年：getYear()+1
+            var date = d.format('yyyyMMddHHmm00');
+            console.log(date + " | " + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + +d.getHours() + ":" + d.getMinutes());
+            creat_k_chart(date);
+            return date;
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="ui-grid-b stock-board-r spacer" style="margin-left : 11px; padding:0px 0px 4px;">
+    <div id="menuDiv" style=" padding:0px 2px 0px 0px;">
+
+        <table cellspacing="0" align="left" style="position:relative; width:100%" >
+            <tr>
+                <th width="14%">Task Details</th>
+                <th width="23%">Indicator</th>
+                <th width="23%">Signal</th>
+                <th width="20%">Fx</th>
+            </tr>
+            <tr>
+                <td>MACD</td>
+                <td>
+                    <div id="macd_1"></div>
+                </td>
+                <td>
+                    <div id="macd_2"></div>
+                </td>
+                <td>
+                    <div id="fx_1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>KD</td>
+                <td>
+                    <div id="kd_k"></div>
+                </td>
+                <td>
+                    <div id="kd_d"></div>
+                </td>
+                <td>
+                    <div id="fx_2"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Page Info</td>
+                <td>
+                    <div id="id12"></div>
+                </td>
+                <td>
+                    <div id="total_id"></div>
+                </td>
+                <td>
+                    <div id="fx_3"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td><div id="bin_id"></div></td>
+                <td><div id="end_id"></div></td>
+                <td>
+                    <div id="fx_4"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="contentDiv">
+        <table cellspacing="0" align="left" >
+            <tr>
+                <th width="10%">Fx</th>
+                <th width="10%">Param</th>
+                <th width="10%">Indicator</th>
+                <th width="10%">Indicator</th>
+                <th width="10%">Indicator</th>
+            </tr>
+            <tr>
+                <td>fx_step01</td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="fx_step01" value="4" style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="size" value="80"  style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="binTime" value="20120105182000"  style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td style="margin:0; padding:0;">
+                    <input type="button" name="qq" value="Start" onclick="startChart();" style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>fx_step02</td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="fx_step02" value="3"  style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td>
+
+                </td>
+                <td><div id="cacheSize"></div></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>fx_step03</td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="fx_step03" value="15"  style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td>
+
+                </td>
+                <td>move</td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="move_id" value="1"  style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+            </tr>
+            <tr>
+                <td>fx_step04</td>
+                <td style="margin:0; padding:0;">
+                    <input type="text" id="fx_step04" value="10"  style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td style="margin:0; padding:0;">
+                    <input type="button" name="qq" value="Fx" onclick="creatFx();" style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td style="margin:0; padding:0;">
+                    <input type="button" name="qq" value="L" onclick="doMove(0);" style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+                <td style="margin:0; padding:0;">
+                    <input type="button" name="qq" value="R" onclick="doMove(1);" style="margin:0; padding:0;height:auto; width: 97%"/>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+
+
+<div style="position:relative;clear:both;padding-top: 5px">
+    <div id="chartContent" class="chartContent" style="display:block;height:600px;"></div>
+</div>
+
+<div id="massage" class="cl01" style="position: absolute;border: 0px solid rgb(51, 51, 51);
+        white-space: nowrap; transition: left 0.4s, top 0.4s; -webkit-transition:
+         left 0.4s, top 0.4s; background-color: rgba(0, 0, 0, 0.7);
+         border-top-left-radius: 4px; border-top-right-radius: 4px;
+         border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;
+         color: rgb(255, 255, 255); text-decoration: none; font-family: Arial, Verdana,
+          sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 100px; top: 62px;">
+    上证指数 2013/4/25<br> 开盘 : 2213.19 最高 : 2224.63<br> 收盘 : 2199.31 最低 : 2191.85
+</div>
+<!--<div id="chartContent" class="chartContent" style="height:400px;width:1100px;border-top:1px dashed #000;border-bottom:1px solid #000;background-color:#FFFFFF" >-->
+<!--<div id="refreshBtnDetail" class="refreshBtnDetail" ></div>-->
+<!--</div>-->
+</body>
+</html>

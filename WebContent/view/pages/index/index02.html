@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+    <meta name = "format-detection" content = "telephone=no">
+    <meta charset=utf-8>
+    <title>注册</title>
+    <script src="../../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="index02.js"></script>
+    <script type="text/javascript">
+
+        function _drawline(ctx, x1, y1, x2, y2, color, width) {
+            color = color || "#111111";
+            var width = width || 2.0;
+
+            var w = ctx.lineWidth;
+            ctx.lineWidth = width;
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(x1 - 1, y1 + 1);
+            ctx.lineTo(x2 - 1, y2 + 1);
+            ctx.stroke();
+            ctx.lineWidth = w;
+            console.log( color + " : " + ctx.lineWidth + " : " + w + ' | ' + x1 + ", " + y1 + ", " + x2 + ", " + y2);
+        };
+
+
+        function t1(x1, y1, x2, y2, color, width){
+           var canvas = document.getElementById('overlay63');
+           var ctx = canvas.getContext('2d');
+            _drawline(ctx, x1, y1, x2, y2, color, width)
+
+        }
+
+        $(document).ready(function(){
+//            t1(38, 381, 54, 380, '#00FFFF' , 1);
+//            t1(54, 380, 70, 384, '#00FFFF' , 1);
+//            t1(70, 384, 86, 388, '#00FFFF' , 1);
+//            t1(86, 388, 102, 392, '#00FFFF' , 1);
+//            var stockCode = "SH600000.stk";
+//            var kLineChart = $('#dd').kLineChart({
+//                stockCode : stockCode
+//            });
+//            var id = $("#dd");
+//
+//            id.html("hahaha");
+            //console.log( Math.round( 30 % 16 ));
+            console.log( 32 % 16 );
+            //$('#dd').html = 'aaaaaaa' ;
+            var aa=[];
+            aa[0] = 1;
+            console.log( aa[0][0]);
+            $('#dd').html( 'aaa');
+        });
+
+        function gets()
+        {
+            var s ="\n\n\n\n\t网页可见区域宽："+ document.body.clientWidth;
+            s += "<br>网页可见区域高：" + document.body.clientHeight;
+            s += "<br>网页可见区域宽：" + document.body.offsetWidth +" (包括边线的宽)";
+            s += "<br>网页可见区域高：" + document.body.offsetHeight +" (包括边线的宽)";
+            s += "<br>网页正文全文宽：" + document.body.scrollWidth;
+            s += "<br>网页正文全文高：" + document.body.scrollHeight;
+            s += "<br>网页被卷去的高：" + document.body.scrollTop;
+            s += "<br>网页被卷去的左：" + document.body.scrollLeft;
+            s += "<br>网页正文部分上：" + window.screenTop;
+            s += "<br>网页正文部分左：" + window.screenLeft;
+            s += "<br>屏幕分辨率的宽：" + window.screen.width;
+            s += "<br>屏幕分辨率的高：" + window.screen.height;
+            s += "<br>屏幕可用工作区宽度：" + window.screen.availWidth;
+            s += "<br>屏幕可用工作区高度：" + window.screen.availHeight;
+            document.getElementById('dd').innerHTML = s;
+        }
+
+        function getAccuracy(price){
+            price = ''+price;
+            var pos = price.indexOf('.');
+            if(pos==-1){
+                return 2;
+            }
+            return price.length - price.indexOf('.')-1;
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+
+
+<div id="dd" class="dd" style="width: 800px; height: 230px;background-color:#C0D7E9" >
+
+    </div>
+
+<!-- <canvas id="overlay63" width="2698" height="460" style="width: 1349px; height: 230px; position: absolute; top: 0px; left: 0px; z-index: 6;"></canvas>
+
+<button>输出每个列表项的值</button>
+<ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Soda</li>
+</ul>
+       -->
+
+</body>
+
+
+</html>

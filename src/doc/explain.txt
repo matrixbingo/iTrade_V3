@@ -1,0 +1,20 @@
+-- PareManager
+1. Controller				//xml and prop data : "D:/workspace/intelTrans_v2/WebContent"
+2. OverallPareManager
+3. SerializaManager
+
+-- interface
+1. BeiLiListenManager		//beili data manager
+2. EOListenManager			//enter and out market manager
+3. ServerListener			//start end pause run ServerListener
+
+-- Enter Market Condition Data
+1. ConditionData
+
+-- 策略组
+ea.tactics.eo.group.tactics
+
+-- 
+1. enter market condition can be control by combination
+2. 
+n.对每个进程进行跟踪实行移动策略

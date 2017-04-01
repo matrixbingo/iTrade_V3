@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config desc="1:是 0:否">
+	
+	<group desc="时间跨度 单位：小时">
+		<var name="isTimeRange" value="1" desc="是否启用	">
+			<creator desc="v1">
+				<para key="timeRange" 		value="17" 	desc="时间有效范围"/>
+				<para key="m30Range" 		value="14" 	desc="M30时间范围"/>
+				<para key="beiliRange" 		value="3" 	desc="M5M10背离有效范围"/>
+			</creator>
+			<creator desc="v2">
+				<para key="timeRange_v2" 	value="90" 	desc="beili时间有效范围"/>
+				<para key="timeRangeM2_v2" 	value="12" 	desc="2个beili的时间差"/>
+			</creator>
+			<creator desc="v3">
+				<para key="timeRange_v3" 	value="90" 	desc="beili时间有效范围"/>
+				<para key="timeRangeM2_v3" 	value="12" 	desc="2个beili的时间差"/>
+			</creator>
+			<creator desc="v4">
+				<para key="timeRange_v4" 	value="17" 	desc="M30时间有效范围"/>
+				<para key="m30Range_v4" 	value="14" 	desc="M5或M10 与 M30时间范围"/>
+				<para key="dvtRange_v4" 	value="3" 	desc="M5 和 M10背离有效范围"/>
+				<para key="isAfM30_v4" 		value="0"	desc="其他背离是否必须在M30之后"/>
+			</creator>
+			<creator desc="v5">
+				<para key="timeRange_v5" 	value="90" 	desc="beili时间有效范围"/>
+				<para key="timeRangeM3_v5" 	value="30" 	desc="3个beili的时间差"/>
+			</creator>
+		</var>
+	</group>
+
+</config>

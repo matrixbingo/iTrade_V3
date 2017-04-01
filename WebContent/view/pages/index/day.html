@@ -1,0 +1,144 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset=utf-8>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/pztg.v2.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotationChart.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotation.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotationEdit.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/quotationQuery.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/markets.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/register.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/normal/page-diagnosis.css"/>
+    <script src="../../lib/jquery-1.9.1.min.js"></script>
+    <script src="../../lib/jquery.transit.min.js"></script>
+    <script src="../../lib/google.fastbutton.js"></script>
+
+
+    <script type="text/javascript" src="../../js/plugin/storage.js"></script>
+    <script type="text/javascript" src="../../js/plugin/update.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationUtils.js"></script>
+    <script type="text/javascript" src="../../js/utils/utils.js"></script>
+    <script type="text/javascript" src="../../js/jquery.header.js"></script>
+    <script type="text/javascript" src="../../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../../js/jquery.iscrollAssistant.js"></script>
+    <script type="text/javascript" src="../../js/utils/md5.js"></script>
+    <!--首页面js-->
+    <script type="text/javascript" src="../../js/news/cPlateNewsPageFun.js"></script>
+    <script type="text/javascript" src="../../js/news/newsSubscribe_private.js"></script>
+    <script type="text/javascript" src="../../js/news/characteristicPlate_private.js"></script>
+    <script type="text/javascript" src="../../js/setUp/setUpAndLoad_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationIndex.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.touchEvent.js"></script>
+    <script type="text/javascript" src="../../js/news/realTimeObservationPage.js"></script>
+    <script type="text/javascript" src="../../js/index/navigation_private.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <!--次级页面js-->
+    <script type="text/javascript" src="../../js/news/newsDetailsPage.js"></script>
+    <script type="text/javascript" src="../../js/quotation/quotationQuery.js"></script>
+    <script type="text/javascript" src="../../js/register/register_private.js"></script>
+    <script type="text/javascript" src="../../js/register/forgetPassword_private.js"></script>
+    <script type="text/javascript" src="../../js/feedback/feedback_private.js"></script>
+    <script type="text/javascript" src="../../js/feedback/operateAdvice_private.js"></script>
+    <script type="text/javascript" src="../../js/markets/marketsDetails.js"></script>
+    <script type="text/javascript" src="../../js/quotation/diagnosisShares_private.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股详细start -->
+    <script type="text/javascript" src="../../js/quotation/quotationChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.timeChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.kLineChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.indicatorChart.js"></script>
+    <script type="text/javascript" src="../../js/quotation/jquery.proEarnChart.js"></script>
+    <!-- 自选股编辑start -->
+
+    <script type="text/javascript" src="index.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //var data = createStockWrapper();
+            //
+
+
+            creat_k_chart('SZ002590.stk');
+        });
+    </script>
+</head>
+<body>
+
+<div class="ss" id="qq">
+    <div id="q2">
+        <div class="pullDown" id="quotationChartPullDown">
+            <span class="pullDownIcon"></span>
+            <span class="pullDownLabel"></span>
+        </div>
+        <div class="stock-board hbox">
+            <div class="stock-board-l red" style="display:block;">
+                <div><b class="realprice">
+                    <span class="arrow"></span></b></div>
+                <div><span class="changeAmt"></span><span class="changeRate"></span></div>
+            </div>
+            <div class="stock-board-r spacer" style="display:block;">
+                <table width="100%">
+                    <tbody>
+                    <tr>
+                        <td><b>X:</b><span> <input id="id11" value="" /></span></td>
+                        <td><b>Y:</b><span> <input id="id12" value="" /></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>总手:</b><span>--</span></td>
+                        <td><b>换手率:</b><span>--</span></td>
+                    </tr>
+                    <tr>
+                        <td><b style="width:52px;">每股收益:</b><span>--</span></td>
+                        <td><b>市盈率:</b><span>--</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--<div class="stock-chart">-->
+            <!--<div class="chartLine">-->
+                <!--<div class="chartLine-inner">-->
+                    <!--<div class="chartBtn chartBtn-bd1 chartBtnSelect"><span>分时</span></div>-->
+                    <!--<div class="chartBtn chartBtn-bd2"><span>日K</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="stock-state"><span></span><span></span></div>-->
+        <div style="position:relative;">
+            <div id="chartContent" class="chartContent" style="display:block;height:600px;"></div>
+        </div>
+        <!--<div class="ui-stockNews-tabs">-->
+            <!--<div class="ui-stockNews-tabs-inner hbox">-->
+                <!--<div class="selected spacer"><span>要闻</span></div>-->
+                <!--<div id="stockNews-custom" class="spacer"><span>新闻订制</span></div>-->
+                <!--<div id="zhenggu" class="spacer"><span class="remindme">诊股</span></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<ul class="ui-stockNews-list"></ul>-->
+        <!--<div class="pullUp" id="quotationChartPullUp"><span class="pullUpIcon"></span><span class="pullUpLabel"></span>-->
+        <!--</div>-->
+    </div>
+</div>
+<div id="massage"style="position: absolute; display: bock; border: 0px solid rgb(51, 51, 51);
+        white-space: nowrap; transition: left 0.4s, top 0.4s; -webkit-transition:
+         left 0.4s, top 0.4s; background-color: rgba(0, 0, 0, 0.7);
+         border-top-left-radius: 4px; border-top-right-radius: 4px;
+         border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;
+         color: rgb(255, 255, 255); text-decoration: none; font-family: Arial, Verdana,
+          sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 100px; top: 62px;">
+    上证指数 2013/4/25<br>  开盘 : 2213.19  最高 : 2224.63<br>  收盘 : 2199.31  最低 : 2191.85
+</div>
+<!--<div id="chartContent" class="chartContent" style="height:400px;width:1100px;border-top:1px dashed #000;border-bottom:1px solid #000;background-color:#FFFFFF" >-->
+<!--<div id="refreshBtnDetail" class="refreshBtnDetail" ></div>-->
+<!--</div>-->
+</body>
+</html>

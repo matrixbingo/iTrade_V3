@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config desc="1:是 0:否">
+
+	<group desc="beili info">
+		<beili name="isM05_beili_cond" value="0" desc="m05 beili condtion">
+			<var key="m05_ang1" value="0" desc="角度"/>
+			<var key="m05_ang2" value="0" desc=""/>
+			<var key="m05_ang3" value="0" desc=""/>
+			<var key="m05_kdif1" value="0" desc="candle 差额"/>
+			<var key="m05_kdif2" value="0" desc=""/>
+			<var key="m05_mdif1" value="0" desc="macd 差额"/>
+			<var key="m05_mdif2" value="0" desc=""/>
+		</beili>
+		<beili name="isM10_beili_cond" value="0" desc="m10 beili condtion">
+			<var key="m10_ang1" value="0" desc="角度"/>
+			<var key="m10_ang2" value="0" desc=""/>
+			<var key="m10_ang3" value="0" desc=""/>
+			<var key="m10_kdif1" value="0" desc="candle 差额"/>
+			<var key="m10_kdif2" value="0" desc=""/>
+			<var key="m10_mdif1" value="0" desc="macd 差额1"/>
+			<var key="m10_mdif2" value="0" desc=""/>
+		</beili>
+		<beili name="isM30_beili_cond" value="0" desc="m30 beili condtion">
+			<var key="m30_ang1" value="0" desc="角度"/>
+			<var key="m30_ang2" value="0" desc=""/>
+			<var key="m30_ang3" value="0" desc=""/>
+			<var key="m30_kdif1" value="0" desc="candle 差额"/>
+			<var key="m30_kdif2" value="0" desc=""/>
+			<var key="m30_mdif1" value="0" desc="macd 差额"/>
+			<var key="m30_mdif2" value="0" desc=""/>
+		</beili>
+	</group>
+
+</config>

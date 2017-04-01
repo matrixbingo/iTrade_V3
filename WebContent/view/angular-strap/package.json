@@ -1,0 +1,89 @@
+{
+  "name": "angular-strap",
+  "description": "AngularStrap - AngularJS directives for Bootstrap",
+  "version": "2.3.5",
+  "keywords": [
+    "angular",
+    "bootstrap"
+  ],
+  "main": "dist/angular-strap.js",
+  "homepage": "http://mgcrea.github.io/angular-strap",
+  "bugs": {
+    "url": "https://github.com/mgcrea/angular-strap/issues"
+  },
+  "author": {
+    "name": "Olivier Louvignes",
+    "email": "olivier@mg-crea.com",
+    "url": "https://github.com/mgcrea"
+  },
+  "contributors": [
+    {
+      "name": "Vitor Fernandes",
+      "url": "https://github.com/vmlf01"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgcrea/angular-strap.git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.1.1",
+    "del": "^2.0.2",
+    "eslint": "^1.7.3",
+    "eslint-config-airbnb": "^0.1.0",
+    "factory-angular-channels": "^0.8.9",
+    "gulp-jshint": "^1.11.2",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-pre": "^4.0.0-alpha.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.3.4",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.14",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sauce-launcher": "^0.3.0",
+    "ng-factory": "^1.0",
+    "phantomjs": "^1.9.18",
+    "through2": "^2.0.0",
+    "undertaker-lib-tasks": "^0.4.3"
+  },
+  "scripts": {
+    "test": "$(npm bin)/gulp jshint karma:unit"
+  },
+  "gitHead": "68e291e5008513fa83853684b3496b1338a276b5",
+  "_id": "angular-strap@2.3.5",
+  "_shasum": "b69b278b186b670a280bbdcbbd12666362270b8f",
+  "_from": "angular-strap@*",
+  "_npmVersion": "2.14.8",
+  "_nodeVersion": "4.2.1",
+  "_npmUser": {
+    "name": "mgcrea",
+    "email": "olivier@mg-crea.com"
+  },
+  "dist": {
+    "shasum": "b69b278b186b670a280bbdcbbd12666362270b8f",
+    "size": 6725753,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/angular-strap/download/angular-strap-2.3.5.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "mgcrea",
+      "email": "olivier@mg-crea.com"
+    },
+    {
+      "name": "mkusher",
+      "email": "aleh.kashnikau@gmail.com"
+    }
+  ],
+  "directories": {},
+  "publish_time": 1446141709476,
+  "_cnpm_publish_time": 1446141709476,
+  "_resolved": "https://registry.npm.taobao.org/angular-strap/download/angular-strap-2.3.5.tgz"
+}

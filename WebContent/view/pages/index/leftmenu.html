@@ -1,0 +1,450 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="leftmenu/css/Index.css" rel="stylesheet" />
+    <script src="leftmenu/js/jquery-1.7.1.min.js"></script>
+    <script src="leftmenu/js/yanue.pop.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #pop {
+            background: #fff;
+            width: 260px;
+            border: 1px solid #e0e0e0;
+            font-size: 12px;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            z-index:8888;
+        }
+
+        #popHead {
+            line-height: 32px;
+            background: #f6f0f3;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            font-size: 12px;
+            padding: 0 0 0 10px;
+        }
+
+            #popHead h2 {
+                font-size: 14px;
+                color: #666;
+                line-height: 32px;
+                height: 32px;
+            }
+
+            #popHead #popClose {
+                position: absolute;
+                right: 10px;
+                top: 1px;
+            }
+
+            #popHead a#popClose:hover {
+                color: #f00;
+                cursor: pointer;
+            }
+
+        #popContent {
+            padding: 5px 10px;
+        }
+
+        #popTitle a {
+            line-height: 24px;
+            font-size: 14px;
+            font-family: '微软雅黑';
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            #popTitle a:hover {
+                color: #f60;
+            }
+
+        #popIntro {
+            text-indent: 24px;
+            line-height: 160%;
+            margin: 5px 0;
+            color: #666;
+        }
+
+        #popMore {
+            text-align: right;
+            border-top: 1px dotted #ccc;
+            line-height: 24px;
+            margin: 8px 0 0 0;
+        }
+
+            #popMore a {
+                color: #f60;
+            }
+
+            #popMore a:hover {
+                color: #f00;
+            }
+    </style>
+</head>
+<body style="overflow: hidden;">
+    <form id="form1" runat="server">
+        <div id="loading">
+            <div id='background' class='background'></div>
+            <div id='progressBar' class='progressBar'>数据加载中，请稍等...</div>
+        </div>
+        <div id="pop" style="display: none;">
+
+            <div id="popHead">
+                <a id="popClose" title="关闭">关闭</a>
+                <h2>温馨提示</h2>
+            </div>
+            <div id="popContent">
+                <dl>
+                    <dt id="popTitle"><a href="#" >这里是参数</a></dt>
+                    <dd id="popIntro">这里是内容简介</dd>
+                </dl>
+                <p id="popMore"><a href="#" >查看 »</a></p>
+            </div>
+        </div>
+        <div id="layout">
+            <div id="header">
+                <div class="headerNav">
+                    <ul class="nav">
+                        <li><a href="http://weibo.com/dwzui" target="_blank">密码修改</a></li>
+                        <li>
+                            ><a href="http://weibo.com/dwzui" target="_blank">退出登录</a></li>
+                    </ul>
+                    <div style="color: white; top: 35px; right: 13px; position: absolute;">你好，XXX，欢迎您的登陆，今天是XXX，当前版本v1.0</div>
+                </div>
+            </div>
+            <div id="leftside">
+                <div id="sidebar_s" style="left: -26px;">
+
+                    <div class="collapse">
+                        <div class="toggleCollapse">
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="sidebar">
+                    <div class="toggleCollapse">
+                        <h2>主菜单</h2>
+                        <div style="display: block;">收缩</div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordionHeader" >
+                            <h2 class="collapsable"><span>Folder</span>数据管理</h2>
+                        </div>
+                        <div class="accordionContent ">
+                            <ul class="tree">
+                                <li>
+                                    <div>
+                                        <div>
+                                        </div>
+                                        <div class="file">
+                                        </div>
+                                        <a href="javascript:void();" onclick="openUrlByTab(this,'test1.aspx');" id="sjdc">数据导出</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div>
+                                        </div>
+                                        <div class="file">
+                                        </div>
+                                        <a href="javascript:void();" onclick="openUrlByTab(this,'test2.aspx');" id="sjxz">数据下载</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="accordionHeader" >
+                            <h2 class="collapsable"><span>Folder</span>审计管理</h2>
+                        </div>
+                        <div class="accordionContent" style="display:none">
+                            <ul class="tree">
+                                <li>
+                                    <div>
+                                        <div>
+                                        </div>
+                                        <div class="file">
+                                        </div>
+                                        <a href="javascript:void(0);" onclick="openUrlByTab(this,'');" id="dlrz">查看审计日志</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="accordionHeader">
+                            <h2 class="collapsable"><span>Folder</span>系统管理</h2>
+                        </div>
+                        <div class="accordionContent" style="display: none">
+                            <ul class="tree">
+                                <li>
+                                    <div>
+                                        <div>
+                                        </div>
+                                        <div class="file">
+                                        </div>
+                                        <a href="javascript:void(0);" onclick="openUrlByTab(this,'minute01.html');" id="xtpz">系统配置</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div>
+                                        </div>
+                                        <div class="file">
+                                        </div>
+                                        <a href="javascript:void(0);" onclick="openUrlByTab(this,'');" id="qxsz">权限设置</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div>
+                                        </div>
+                                        <div class="file">
+                                        </div>
+                                        <a href="javascript:void(0);" onclick="openUrlByTab(this,'Admin/UserList.aspx');" id="zhgl">账号管理</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="container">
+                <div class="tabsPage" id="navTab">
+                    <div class="tabsPageHeader">
+                        <div class="tabsPageHeaderContent">
+                            <ul class="navTab-tab" style="left: 0px;">
+                                <li class="main selected" id="tabhome" onclick="openUrlByTab(this,'Default.aspx', 1);"><a href="javascript:;"><span><span class="home_icon">我的主页</span></span></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="navTab-panel">
+                        <div class='page unitBox' id='panlehome'>
+                            <iframe id="frmhome" src='' border="0" frameborder="no" marginwidth="0" marginheight='0' style='width: 100%;'></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="footer">
+            上海疾病防御控制中心 版权所有
+        </div>
+    </form>
+
+</body>
+<script>
+    $(document).ready(function () {
+        var menuCount =2;
+        $('.accordionHeader:first').addClass('opened');
+        $(window).resize(function () {
+            $('.collapse').height($(window).height() - 85);
+            $('#sidebar').height($(window).height() - 85);
+            $('#sidebar .accordionContent').height($(window).height() - 85 - 52 - parseInt(menuCount) * 25);
+            $('#container').height($(window).height() - 85);
+            $('#container').width($(window).width() - 219);
+            $('iframe').each(function () {
+                $(this).height($(window).height() - 112);
+            });
+
+        });
+        $('.collapse').height($(window).height() - 85);
+        $('#sidebar').height($(window).height() - 85);
+        $('#sidebar .accordionContent').height($(window).height() - 85 - 52 - parseInt(menuCount) * 25);
+        $('#container').height($(window).height() - 85);
+        $('#container').width($(window).width() - 219);
+        $('.navTab-panel div').each(function () {
+            $(this).children(0).height($(window).height() - 85 - 28);
+        });
+
+        $('#sidebar li').hover(function () {
+            $(this).css("background-color", "#f5f5f5");
+        }, function () {
+            if ($(this).attr("oldcolor") == "#e8edf3")
+                $(this).css("background-color", $(this).attr("oldcolor"));
+            else {
+                $(this).css("background-color", "white");
+            }
+        });
+
+        $('#sidebar li').click(function () {
+            $('#sidebar li').each(function () {
+                $(this).css("background-color", "white");
+                $(this).attr("oldcolor", "");
+            });
+            $(this).css("background-color", "#e8edf3");
+            $(this).attr("oldcolor", "#e8edf3");
+        });
+
+        $('.accordionHeader').click(function () {
+            if (!$(this).hasClass('opened')) {
+                $('.accordionHeader').each(function () {
+                    $(this).next().css('display', 'none');
+                    $(this).removeClass('opened');
+                });
+                $(this).addClass('opened');
+                $(this).next().show(500);
+            }
+        });
+
+        $('#sidebar .toggleCollapse div').click(function () {
+            index = 0;
+            $(this).parent().parent().animate({ left: "-205px", position: "absolute" },
+                700, null,
+                function () { $('#sidebar_s').animate({ left: "5px", position: "relative" }, 600); });
+            $('#container').width($(window).width() - 41);
+            $('#container').css('left', '34px');
+        });
+
+        $('#sidebar_s .toggleCollapse div').click(function () {
+            $('#sidebar_s').animate({ left: "-26px", position: "absolute" },
+                700, null,
+                function () { $('#sidebar .toggleCollapse div').parent().parent().animate({ left: "5px", position: "relative" }, 600); });
+            $('#container').width($(window).width() - 219);
+            $('#container').css('left', '212px');
+
+        });
+        var index = 0;
+
+        $('#sidebar_s .collapse').click(function () {
+            if (index == 0) {
+                $('#sidebar .toggleCollapse div').parent().parent().animate({ left: "26px", position: "absolute" }, 600);
+                index = 1;
+            }
+            else {
+                $('#sidebar .toggleCollapse div').parent().parent().animate({ left: "-205px", position: "absolute" }, 600);
+                index = 0;
+            }
+        });
+
+        $('.navTab-tab li').click(function () {
+            $('.navTab-tab li').each(function () {
+                $(this).removeClass('selected');
+                $('#panle' + $(this).attr('id').substring(3, $(this).attr('id').length)).css('display', 'none');
+            });
+            $(this).addClass('selected');
+            $('#panle' + $(this).attr('id').substring(3, $(this).attr('id').length)).css('display', '');
+        });
+
+        $('#panlehome iframe').attr('src', 'Default.aspx');
+
+    });
+
+    function closeTab(o) {
+        var delid = $(o).parent().attr('id').substring(3, $(o).parent().attr('id').length), selid;
+
+        $('#sidebar li').each(function () {
+            $(this).css("background-color", "white");
+            $(this).attr("oldcolor", "");
+        });
+
+        $('#tabhome').addClass('selected');
+        $('#panlehome').css('display', '');
+
+        $(o).parent().remove();
+        $('#panle' + delid).remove();
+
+    }
+
+    function openUrlByTab(o, url, flag) {
+        var id = $(o).attr('id');
+
+        if (flag == 1) {
+            id = id.substring(3, id.length);
+        }
+
+        var newtabObj = $("<li class='external' id='tab" + id + "' onclick='openUrlByTab(this, null, 1)'><a title='" +
+               $(o).html() + "'  href='javascript:void(0);'><span>" + $(o).html() + "</span></a><a title='" +
+               $(o).html() + "' class='close'  href='javascript:void(0);'>close</a></li>");
+        var newpanelObj = $("<div class='page unitBox' id='panle" + id + "' style='display:none;'><iframe id='frm" + id + "' src='" +
+            url + "' border=0 frameborder=no marginwidth=0 marginheight='0' style='width: 100%;'></iframe></div>");
+
+        $('.navTab-tab li').each(function () {
+            $(this).removeClass('selected');
+            $('#panle' + $(this).attr('id').substring(3, $(this).attr('id').length)).css('display', 'none');
+        });
+
+
+        if ($('.navTab-tab li[id = tab' + id + ']').length > 0) {
+            $('#panle' + id).css('display', '');
+            $('#tab' + id).show();
+            $('#tab' + id).addClass('selected');
+
+            $('#sidebar li').each(function () {
+                $(this).css("background-color", "white");
+                $(this).attr("oldcolor", "");
+            });
+            $('#' + id).parent().parent().css("background-color", "#e8edf3");
+            $('#' + id).parent().parent().attr("oldcolor", "#e8edf3");
+
+            reloadFrm(id);
+        }
+        else {
+            $('.navTab-tab').append(newtabObj);
+            $('.navTab-panel').append(newpanelObj);
+
+            $('.navTab-tab li .close').click(function (e) {
+                closeTab(this);
+                e.stopPropagation();
+            });
+
+            $('.navTab-tab li').each(function () {
+                $(this).removeClass('selected');
+                $('#panle' + $(this).attr('id').substring(3, $(this).attr('id').length)).css('display', 'none');
+            });
+            $('#tab' + $(o).attr('id')).addClass('selected');
+
+            $(newtabObj).click(function () {
+                $('.navTab-tab li').each(function () {
+                    $(this).removeClass('selected');
+                });
+                $(this).addClass('selected');
+            });
+
+            $('#panle' + id).css('display', '');
+
+            $('.navTab-panel div').each(function () {
+                $(this).children(0).height($(window).height() - 85 - 28);
+            });
+        }
+    }
+    function getExportStateByAjax(title, content) {
+        var s = window.setInterval(function () {
+            $.ajax({
+                type: "post",
+                url: "Ajax/getExportState.aspx",
+                dataType: "text",
+                success: function (data) {
+                    if (data == 1) {
+                        var pop = new Pop(title, "", content);
+                        clearInterval(s);
+                        reloadFrm("sjxz");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                    clearInterval(s);
+                }
+            });
+
+        }, 3000);
+    }
+
+    function reloadFrm(id) {
+        $("#frm" + id).attr("src", $("#frm" + id).attr("src"));
+    }
+
+    setTimeout(function () { $('#loading').hide(); }, 500);
+</script>
+</html>
