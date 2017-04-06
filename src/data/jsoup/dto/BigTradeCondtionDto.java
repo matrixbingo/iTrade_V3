@@ -1,9 +1,11 @@
 package data.jsoup.dto;
 
+import lombok.Data;
+
 /**
  * Created by liang.wang.sh on 2017/1/24.
  */
-
+@Data
 public class BigTradeCondtionDto {
 
     private int type;

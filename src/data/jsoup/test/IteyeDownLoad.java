@@ -15,7 +15,6 @@ public class IteyeDownLoad {
      * @method 测试获取内容程序
      */
     public static void main(String[] args) {
-
         /**
          * 执行分析程序
          */
